@@ -1,8 +1,17 @@
 import json
 from pprint import pprint
 
-with open('austen.book.id') as data_file:    
-    data = json.load(data_file)
+def extract_character(filename, character_name):
+	with open(filename) as data_file:
+		data = json.load(data_file)
 
-# pprint(data)
-print(data['characters'][1])
+	for i in range(len(data['characters'])):
+		names = data['characters'][i]['names']
+
+		for name in names:
+			if character_name in name['n']:
+				return data['characters'][i]
+
+	return None
+
+pprint(extract_character('austen.book.id', 'Elinor'))
