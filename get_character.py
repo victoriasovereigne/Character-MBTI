@@ -27,5 +27,4 @@ def get_character(filename, characters):
 			if c in p:
 				file_dict[c].write(p)
 
-get_character(filename, characters)
-
+# get_character(filename, characters)
