@@ -28,3 +28,32 @@ def get_character(filename, characters):
 				file_dict[c].write(p)
 
 # get_character(filename, characters)
+
+file2 = 'data435.csv'
+
+def convert_name(filename=file2):
+	ff = open(file2, 'r')
+	lines = ff.readlines()
+
+	for line in lines:
+		s = line.split(',')
+		name = s[0]
+
+		idx = []
+		for i, c in enumerate(name):
+			if i > 0 and ' ' not in name:
+				if c.isupper():
+					idx.append(i)
+		# print(idx)
+
+		tmp = ''
+		prev = 0
+		for i in idx:
+			tmp += name[prev:i] + ' '
+			prev = i
+
+		tmp += name[prev:]
+
+		print(tmp + ',' + ','.join(s[1:]).strip())
+
+convert_name()
