@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root>
+  <document>
+    <sentences>
+      <sentence id="1">
+        <tokens>
+          <token id="1">
+            <word>Madame</word>
+            <lemma>Madame</lemma>
+            <CharacterOffsetBegin>0</CharacterOffsetBegin>
+            <CharacterOffsetEnd>6</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>ORGANIZATION</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="2">
+            <word>Defarge</word>
+            <lemma>Defarge</lemma>
+            <CharacterOffsetBegin>7</CharacterOffsetBegin>
+            <CharacterOffsetEnd>14</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>ORGANIZATION</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="3">
+            <word>looked</word>
+            <lemma>look</lemma>
+            <CharacterOffsetBegin>15</CharacterOffsetBegin>
+            <CharacterOffsetEnd>21</CharacterOffsetEnd>
+            <POS>VBD</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="4">
+            <word>superciliously</word>
+            <lemma>superciliously</lemma>
+            <CharacterOffsetBegin>22</CharacterOffsetBegin>
+            <CharacterOffsetEnd>36</CharacterOffsetEnd>
+            <POS>RB</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="5">
+            <word>at</word>
+            <lemma>at</lemma>
+            <CharacterOffsetBegin>37</CharacterOffsetBegin>
+            <CharacterOffsetEnd>39</CharacterOffsetEnd>
+            <POS>IN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="6">
+            <word>the</word>
+            <lemma>the</lemma>
+            <CharacterOffsetBegin>40</CharacterOffsetBegin>
+            <CharacterOffsetEnd>43</CharacterOffsetEnd>
+            <POS>DT</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="7">
+            <word>client</word>
+            <lemma>client</lemma>
+            <CharacterOffsetBegin>44</CharacterOffsetBegin>
+            <CharacterOffsetEnd>50</CharacterOffsetEnd>
+            <POS>NN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="8">
+            <word>,</word>
+            <lemma>,</lemma>
+            <CharacterOffsetBegin>50</CharacterOffsetBegin>
+            <CharacterOffsetEnd>51</CharacterOffsetEnd>
+            <POS>,</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="9">
+            <word>and</word>
+            <lemma>and</lemma>
+            <CharacterOffsetBegin>52</CharacterOffsetBegin>
+            <CharacterOffsetEnd>55</CharacterOffsetEnd>
+            <POS>CC</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="10">
+            <word>nodded</word>
+            <lemma>nod</lemma>
+            <CharacterOffsetBegin>56</CharacterOffsetBegin>
+            <CharacterOffsetEnd>62</CharacterOffsetEnd>
+            <POS>VBD</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="11">
+            <word>in</word>
+            <lemma>in</lemma>
+            <CharacterOffsetBegin>63</CharacterOffsetBegin>
+            <CharacterOffsetEnd>65</CharacterOffsetEnd>
+            <POS>IN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="12">
+            <word>confirmation</word>
+            <lemma>confirmation</lemma>
+            <CharacterOffsetBegin>66</CharacterOffsetBegin>
+            <CharacterOffsetEnd>78</CharacterOffsetEnd>
+            <POS>NN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="13">
+            <word>.</word>
+            <lemma>.</lemma>
+            <CharacterOffsetBegin>78</CharacterOffsetBegin>
+            <CharacterOffsetEnd>79</CharacterOffsetEnd>
+            <POS>.</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+        </tokens>
+        <parse>(ROOT
+          (S
+          (NP (NNP Madame) (NNP Defarge))
+          (VP
+          (VP (VBD looked)
+          (ADVP (RB superciliously))
+          (PP (IN at)
+          (NP (DT the) (NN client))))
+          (, ,)
+          (CC and)
+          (VP (VBD nodded)
+          (PP (IN in)
+          (NP (NN confirmation)))))
+          (. .)))
+          
+          </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">looked</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="2">Defarge</governor>
+            <dependent idx="1">Madame</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">looked</governor>
+            <dependent idx="2">Defarge</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="3">looked</governor>
+            <dependent idx="4">superciliously</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="7">client</governor>
+            <dependent idx="5">at</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="7">client</governor>
+            <dependent idx="6">the</dependent>
+          </dep>
+          <dep type="nmod">
+            <governor idx="3">looked</governor>
+            <dependent idx="7">client</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">looked</governor>
+            <dependent idx="8">,</dependent>
+          </dep>
+          <dep type="cc">
+            <governor idx="3">looked</governor>
+            <dependent idx="9">and</dependent>
+          </dep>
+          <dep type="conj">
+            <governor idx="3">looked</governor>
+            <dependent idx="10">nodded</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="12">confirmation</governor>
+            <dependent idx="11">in</dependent>
+          </dep>
+          <dep type="nmod">
+            <governor idx="10">nodded</governor>
+            <dependent idx="12">confirmation</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">looked</governor>
+            <dependent idx="13">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">looked</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="2">Defarge</governor>
+            <dependent idx="1">Madame</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">looked</governor>
+            <dependent idx="2">Defarge</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="3">looked</governor>
+            <dependent idx="4">superciliously</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="7">client</governor>
+            <dependent idx="5">at</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="7">client</governor>
+            <dependent idx="6">the</dependent>
+          </dep>
+          <dep type="nmod:at">
+            <governor idx="3">looked</governor>
+            <dependent idx="7">client</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">looked</governor>
+            <dependent idx="8">,</dependent>
+          </dep>
+          <dep type="cc">
+            <governor idx="3">looked</governor>
+            <dependent idx="9">and</dependent>
+          </dep>
+          <dep type="conj:and">
+            <governor idx="3">looked</governor>
+            <dependent idx="10">nodded</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="12">confirmation</governor>
+            <dependent idx="11">in</dependent>
+          </dep>
+          <dep type="nmod:in">
+            <governor idx="10">nodded</governor>
+            <dependent idx="12">confirmation</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">looked</governor>
+            <dependent idx="13">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">looked</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="2">Defarge</governor>
+            <dependent idx="1">Madame</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">looked</governor>
+            <dependent idx="2">Defarge</dependent>
+          </dep>
+          <dep type="nsubj" extra="true">
+            <governor idx="10">nodded</governor>
+            <dependent idx="2">Defarge</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="3">looked</governor>
+            <dependent idx="4">superciliously</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="7">client</governor>
+            <dependent idx="5">at</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="7">client</governor>
+            <dependent idx="6">the</dependent>
+          </dep>
+          <dep type="nmod:at">
+            <governor idx="3">looked</governor>
+            <dependent idx="7">client</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">looked</governor>
+            <dependent idx="8">,</dependent>
+          </dep>
+          <dep type="cc">
+            <governor idx="3">looked</governor>
+            <dependent idx="9">and</dependent>
+          </dep>
+          <dep type="conj:and">
+            <governor idx="3">looked</governor>
+            <dependent idx="10">nodded</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="12">confirmation</governor>
+            <dependent idx="11">in</dependent>
+          </dep>
+          <dep type="nmod:in">
+            <governor idx="10">nodded</governor>
+            <dependent idx="12">confirmation</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">looked</governor>
+            <dependent idx="13">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">looked</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="2">Defarge</governor>
+            <dependent idx="1">Madame</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">looked</governor>
+            <dependent idx="2">Defarge</dependent>
+          </dep>
+          <dep type="nsubj" extra="true">
+            <governor idx="10">nodded</governor>
+            <dependent idx="2">Defarge</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="3">looked</governor>
+            <dependent idx="4">superciliously</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="7">client</governor>
+            <dependent idx="5">at</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="7">client</governor>
+            <dependent idx="6">the</dependent>
+          </dep>
+          <dep type="nmod:at">
+            <governor idx="3">looked</governor>
+            <dependent idx="7">client</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">looked</governor>
+            <dependent idx="8">,</dependent>
+          </dep>
+          <dep type="cc">
+            <governor idx="3">looked</governor>
+            <dependent idx="9">and</dependent>
+          </dep>
+          <dep type="conj:and">
+            <governor idx="3">looked</governor>
+            <dependent idx="10">nodded</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="12">confirmation</governor>
+            <dependent idx="11">in</dependent>
+          </dep>
+          <dep type="nmod:in">
+            <governor idx="10">nodded</governor>
+            <dependent idx="12">confirmation</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">looked</governor>
+            <dependent idx="13">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-plus-plus-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">looked</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="2">Defarge</governor>
+            <dependent idx="1">Madame</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">looked</governor>
+            <dependent idx="2">Defarge</dependent>
+          </dep>
+          <dep type="nsubj" extra="true">
+            <governor idx="10">nodded</governor>
+            <dependent idx="2">Defarge</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="3">looked</governor>
+            <dependent idx="4">superciliously</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="7">client</governor>
+            <dependent idx="5">at</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="7">client</governor>
+            <dependent idx="6">the</dependent>
+          </dep>
+          <dep type="nmod:at">
+            <governor idx="3">looked</governor>
+            <dependent idx="7">client</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">looked</governor>
+            <dependent idx="8">,</dependent>
+          </dep>
+          <dep type="cc">
+            <governor idx="3">looked</governor>
+            <dependent idx="9">and</dependent>
+          </dep>
+          <dep type="conj:and">
+            <governor idx="3">looked</governor>
+            <dependent idx="10">nodded</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="12">confirmation</governor>
+            <dependent idx="11">in</dependent>
+          </dep>
+          <dep type="nmod:in">
+            <governor idx="10">nodded</governor>
+            <dependent idx="12">confirmation</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">looked</governor>
+            <dependent idx="13">.</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+    </sentences>
+  </document>
+</root>

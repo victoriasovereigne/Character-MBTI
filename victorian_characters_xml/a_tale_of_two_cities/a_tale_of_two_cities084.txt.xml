@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root>
+  <document>
+    <sentences>
+      <sentence id="1">
+        <tokens>
+          <token id="1">
+            <word>``</word>
+            <lemma>``</lemma>
+            <CharacterOffsetBegin>0</CharacterOffsetBegin>
+            <CharacterOffsetEnd>1</CharacterOffsetEnd>
+            <POS>``</POS>
+            <NER>O</NER>
+          </token>
+          <token id="2">
+            <word>Now</word>
+            <lemma>now</lemma>
+            <CharacterOffsetBegin>1</CharacterOffsetBegin>
+            <CharacterOffsetEnd>4</CharacterOffsetEnd>
+            <POS>RB</POS>
+            <NER>DATE</NER>
+            <NormalizedNER>PRESENT_REF</NormalizedNER>
+            <Speaker>PER1</Speaker>
+            <Timex tid="t1" type="DATE">PRESENT_REF</Timex>
+          </token>
+          <token id="3">
+            <word>,</word>
+            <lemma>,</lemma>
+            <CharacterOffsetBegin>4</CharacterOffsetBegin>
+            <CharacterOffsetEnd>5</CharacterOffsetEnd>
+            <POS>,</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="4">
+            <word>to</word>
+            <lemma>to</lemma>
+            <CharacterOffsetBegin>6</CharacterOffsetBegin>
+            <CharacterOffsetEnd>8</CharacterOffsetEnd>
+            <POS>TO</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="5">
+            <word>the</word>
+            <lemma>the</lemma>
+            <CharacterOffsetBegin>9</CharacterOffsetBegin>
+            <CharacterOffsetEnd>12</CharacterOffsetEnd>
+            <POS>DT</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="6">
+            <word>prisoner</word>
+            <lemma>prisoner</lemma>
+            <CharacterOffsetBegin>13</CharacterOffsetBegin>
+            <CharacterOffsetEnd>21</CharacterOffsetEnd>
+            <POS>NN</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="7">
+            <word>'s</word>
+            <lemma>'s</lemma>
+            <CharacterOffsetBegin>21</CharacterOffsetBegin>
+            <CharacterOffsetEnd>23</CharacterOffsetEnd>
+            <POS>POS</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="8">
+            <word>conversation</word>
+            <lemma>conversation</lemma>
+            <CharacterOffsetBegin>24</CharacterOffsetBegin>
+            <CharacterOffsetEnd>36</CharacterOffsetEnd>
+            <POS>NN</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="9">
+            <word>,</word>
+            <lemma>,</lemma>
+            <CharacterOffsetBegin>36</CharacterOffsetBegin>
+            <CharacterOffsetEnd>37</CharacterOffsetEnd>
+            <POS>,</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="10">
+            <word>Miss</word>
+            <lemma>Miss</lemma>
+            <CharacterOffsetBegin>38</CharacterOffsetBegin>
+            <CharacterOffsetEnd>42</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="11">
+            <word>Manette</word>
+            <lemma>Manette</lemma>
+            <CharacterOffsetBegin>43</CharacterOffsetBegin>
+            <CharacterOffsetEnd>50</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>PERSON</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="12">
+            <word>.</word>
+            <lemma>.</lemma>
+            <CharacterOffsetBegin>50</CharacterOffsetBegin>
+            <CharacterOffsetEnd>51</CharacterOffsetEnd>
+            <POS>.</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="13">
+            <word>''</word>
+            <lemma>''</lemma>
+            <CharacterOffsetBegin>51</CharacterOffsetBegin>
+            <CharacterOffsetEnd>52</CharacterOffsetEnd>
+            <POS>''</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+        </tokens>
+        <parse>(ROOT
+          (FRAG (`` ``)
+          (NP (RB Now))
+          (, ,)
+          (PP (TO to)
+          (NP
+          (NP (DT the) (NN prisoner) (POS 's))
+          (NN conversation)))
+          (, ,)
+          (NP (NNP Miss) (NNP Manette))
+          (. .) ('' '')))
+          
+          </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="2">Now</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="3">,</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="8">conversation</governor>
+            <dependent idx="4">to</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="6">prisoner</governor>
+            <dependent idx="5">the</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="8">conversation</governor>
+            <dependent idx="6">prisoner</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="6">prisoner</governor>
+            <dependent idx="7">'s</dependent>
+          </dep>
+          <dep type="nmod">
+            <governor idx="2">Now</governor>
+            <dependent idx="8">conversation</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="9">,</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="11">Manette</governor>
+            <dependent idx="10">Miss</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="2">Now</governor>
+            <dependent idx="11">Manette</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="12">.</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="13">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="2">Now</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="3">,</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="8">conversation</governor>
+            <dependent idx="4">to</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="6">prisoner</governor>
+            <dependent idx="5">the</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="8">conversation</governor>
+            <dependent idx="6">prisoner</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="6">prisoner</governor>
+            <dependent idx="7">'s</dependent>
+          </dep>
+          <dep type="nmod:to">
+            <governor idx="2">Now</governor>
+            <dependent idx="8">conversation</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="9">,</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="11">Manette</governor>
+            <dependent idx="10">Miss</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="2">Now</governor>
+            <dependent idx="11">Manette</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="12">.</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="13">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="2">Now</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="3">,</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="8">conversation</governor>
+            <dependent idx="4">to</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="6">prisoner</governor>
+            <dependent idx="5">the</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="8">conversation</governor>
+            <dependent idx="6">prisoner</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="6">prisoner</governor>
+            <dependent idx="7">'s</dependent>
+          </dep>
+          <dep type="nmod:to">
+            <governor idx="2">Now</governor>
+            <dependent idx="8">conversation</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="9">,</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="11">Manette</governor>
+            <dependent idx="10">Miss</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="2">Now</governor>
+            <dependent idx="11">Manette</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="12">.</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="13">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="2">Now</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="3">,</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="8">conversation</governor>
+            <dependent idx="4">to</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="6">prisoner</governor>
+            <dependent idx="5">the</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="8">conversation</governor>
+            <dependent idx="6">prisoner</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="6">prisoner</governor>
+            <dependent idx="7">'s</dependent>
+          </dep>
+          <dep type="nmod:to">
+            <governor idx="2">Now</governor>
+            <dependent idx="8">conversation</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="9">,</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="11">Manette</governor>
+            <dependent idx="10">Miss</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="2">Now</governor>
+            <dependent idx="11">Manette</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="12">.</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="13">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-plus-plus-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="2">Now</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="3">,</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="8">conversation</governor>
+            <dependent idx="4">to</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="6">prisoner</governor>
+            <dependent idx="5">the</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="8">conversation</governor>
+            <dependent idx="6">prisoner</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="6">prisoner</governor>
+            <dependent idx="7">'s</dependent>
+          </dep>
+          <dep type="nmod:to">
+            <governor idx="2">Now</governor>
+            <dependent idx="8">conversation</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="9">,</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="11">Manette</governor>
+            <dependent idx="10">Miss</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="2">Now</governor>
+            <dependent idx="11">Manette</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="12">.</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">Now</governor>
+            <dependent idx="13">''</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+    </sentences>
+  </document>
+</root>

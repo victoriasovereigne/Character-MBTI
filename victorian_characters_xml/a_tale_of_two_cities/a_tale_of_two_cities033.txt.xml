@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root>
+  <document>
+    <sentences>
+      <sentence id="1">
+        <tokens>
+          <token id="1">
+            <word>``</word>
+            <lemma>``</lemma>
+            <CharacterOffsetBegin>0</CharacterOffsetBegin>
+            <CharacterOffsetEnd>1</CharacterOffsetEnd>
+            <POS>``</POS>
+            <NER>O</NER>
+          </token>
+          <token id="2">
+            <word>I</word>
+            <lemma>I</lemma>
+            <CharacterOffsetBegin>1</CharacterOffsetBegin>
+            <CharacterOffsetEnd>2</CharacterOffsetEnd>
+            <POS>PRP</POS>
+            <NER>O</NER>
+            <Speaker>3</Speaker>
+          </token>
+          <token id="3">
+            <word>hope</word>
+            <lemma>hope</lemma>
+            <CharacterOffsetBegin>3</CharacterOffsetBegin>
+            <CharacterOffsetEnd>7</CharacterOffsetEnd>
+            <POS>VBP</POS>
+            <NER>O</NER>
+            <Speaker>3</Speaker>
+          </token>
+          <token id="4">
+            <word>she</word>
+            <lemma>she</lemma>
+            <CharacterOffsetBegin>8</CharacterOffsetBegin>
+            <CharacterOffsetEnd>11</CharacterOffsetEnd>
+            <POS>PRP</POS>
+            <NER>O</NER>
+            <Speaker>3</Speaker>
+          </token>
+          <token id="5">
+            <word>will</word>
+            <lemma>will</lemma>
+            <CharacterOffsetBegin>12</CharacterOffsetBegin>
+            <CharacterOffsetEnd>16</CharacterOffsetEnd>
+            <POS>MD</POS>
+            <NER>O</NER>
+            <Speaker>3</Speaker>
+          </token>
+          <token id="6">
+            <word>do</word>
+            <lemma>do</lemma>
+            <CharacterOffsetBegin>17</CharacterOffsetBegin>
+            <CharacterOffsetEnd>19</CharacterOffsetEnd>
+            <POS>VB</POS>
+            <NER>O</NER>
+            <Speaker>3</Speaker>
+          </token>
+          <token id="7">
+            <word>well</word>
+            <lemma>well</lemma>
+            <CharacterOffsetBegin>20</CharacterOffsetBegin>
+            <CharacterOffsetEnd>24</CharacterOffsetEnd>
+            <POS>RB</POS>
+            <NER>O</NER>
+            <Speaker>3</Speaker>
+          </token>
+          <token id="8">
+            <word>now</word>
+            <lemma>now</lemma>
+            <CharacterOffsetBegin>25</CharacterOffsetBegin>
+            <CharacterOffsetEnd>28</CharacterOffsetEnd>
+            <POS>RB</POS>
+            <NER>DATE</NER>
+            <NormalizedNER>PRESENT_REF</NormalizedNER>
+            <Speaker>3</Speaker>
+            <Timex tid="t1" type="DATE">PRESENT_REF</Timex>
+          </token>
+          <token id="9">
+            <word>,</word>
+            <lemma>,</lemma>
+            <CharacterOffsetBegin>28</CharacterOffsetBegin>
+            <CharacterOffsetEnd>29</CharacterOffsetEnd>
+            <POS>,</POS>
+            <NER>O</NER>
+            <Speaker>3</Speaker>
+          </token>
+          <token id="10">
+            <word>''</word>
+            <lemma>''</lemma>
+            <CharacterOffsetBegin>29</CharacterOffsetBegin>
+            <CharacterOffsetEnd>30</CharacterOffsetEnd>
+            <POS>''</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="11">
+            <word>said</word>
+            <lemma>say</lemma>
+            <CharacterOffsetBegin>31</CharacterOffsetBegin>
+            <CharacterOffsetEnd>35</CharacterOffsetEnd>
+            <POS>VBD</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="12">
+            <word>Mr.</word>
+            <lemma>Mr.</lemma>
+            <CharacterOffsetBegin>36</CharacterOffsetBegin>
+            <CharacterOffsetEnd>39</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="13">
+            <word>Lorry</word>
+            <lemma>Lorry</lemma>
+            <CharacterOffsetBegin>40</CharacterOffsetBegin>
+            <CharacterOffsetEnd>45</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>PERSON</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="14">
+            <word>.</word>
+            <lemma>.</lemma>
+            <CharacterOffsetBegin>45</CharacterOffsetBegin>
+            <CharacterOffsetEnd>46</CharacterOffsetEnd>
+            <POS>.</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+        </tokens>
+        <parse>(ROOT
+          (SINV (`` ``)
+          (S
+          (NP (PRP I))
+          (VP (VBP hope)
+          (SBAR
+          (S
+          (NP (PRP she))
+          (VP (MD will)
+          (VP (VB do)
+          (ADVP (RB well) (RB now))))))))
+          (, ,) ('' '')
+          (VP (VBD said))
+          (NP (NNP Mr.) (NNP Lorry))
+          (. .)))
+          
+          </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="11">said</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">said</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">hope</governor>
+            <dependent idx="2">I</dependent>
+          </dep>
+          <dep type="ccomp">
+            <governor idx="11">said</governor>
+            <dependent idx="3">hope</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">do</governor>
+            <dependent idx="4">she</dependent>
+          </dep>
+          <dep type="aux">
+            <governor idx="6">do</governor>
+            <dependent idx="5">will</dependent>
+          </dep>
+          <dep type="ccomp">
+            <governor idx="3">hope</governor>
+            <dependent idx="6">do</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="8">now</governor>
+            <dependent idx="7">well</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="6">do</governor>
+            <dependent idx="8">now</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">said</governor>
+            <dependent idx="9">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">said</governor>
+            <dependent idx="10">''</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="13">Lorry</governor>
+            <dependent idx="12">Mr.</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="11">said</governor>
+            <dependent idx="13">Lorry</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">said</governor>
+            <dependent idx="14">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="11">said</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">said</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">hope</governor>
+            <dependent idx="2">I</dependent>
+          </dep>
+          <dep type="ccomp">
+            <governor idx="11">said</governor>
+            <dependent idx="3">hope</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">do</governor>
+            <dependent idx="4">she</dependent>
+          </dep>
+          <dep type="aux">
+            <governor idx="6">do</governor>
+            <dependent idx="5">will</dependent>
+          </dep>
+          <dep type="ccomp">
+            <governor idx="3">hope</governor>
+            <dependent idx="6">do</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="8">now</governor>
+            <dependent idx="7">well</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="6">do</governor>
+            <dependent idx="8">now</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">said</governor>
+            <dependent idx="9">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">said</governor>
+            <dependent idx="10">''</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="13">Lorry</governor>
+            <dependent idx="12">Mr.</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="11">said</governor>
+            <dependent idx="13">Lorry</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">said</governor>
+            <dependent idx="14">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="11">said</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">said</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">hope</governor>
+            <dependent idx="2">I</dependent>
+          </dep>
+          <dep type="ccomp">
+            <governor idx="11">said</governor>
+            <dependent idx="3">hope</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">do</governor>
+            <dependent idx="4">she</dependent>
+          </dep>
+          <dep type="aux">
+            <governor idx="6">do</governor>
+            <dependent idx="5">will</dependent>
+          </dep>
+          <dep type="ccomp">
+            <governor idx="3">hope</governor>
+            <dependent idx="6">do</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="8">now</governor>
+            <dependent idx="7">well</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="6">do</governor>
+            <dependent idx="8">now</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">said</governor>
+            <dependent idx="9">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">said</governor>
+            <dependent idx="10">''</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="13">Lorry</governor>
+            <dependent idx="12">Mr.</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="11">said</governor>
+            <dependent idx="13">Lorry</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">said</governor>
+            <dependent idx="14">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="11">said</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">said</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">hope</governor>
+            <dependent idx="2">I</dependent>
+          </dep>
+          <dep type="ccomp">
+            <governor idx="11">said</governor>
+            <dependent idx="3">hope</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">do</governor>
+            <dependent idx="4">she</dependent>
+          </dep>
+          <dep type="aux">
+            <governor idx="6">do</governor>
+            <dependent idx="5">will</dependent>
+          </dep>
+          <dep type="ccomp">
+            <governor idx="3">hope</governor>
+            <dependent idx="6">do</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="8">now</governor>
+            <dependent idx="7">well</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="6">do</governor>
+            <dependent idx="8">now</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">said</governor>
+            <dependent idx="9">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">said</governor>
+            <dependent idx="10">''</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="13">Lorry</governor>
+            <dependent idx="12">Mr.</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="11">said</governor>
+            <dependent idx="13">Lorry</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">said</governor>
+            <dependent idx="14">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-plus-plus-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="11">said</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">said</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">hope</governor>
+            <dependent idx="2">I</dependent>
+          </dep>
+          <dep type="ccomp">
+            <governor idx="11">said</governor>
+            <dependent idx="3">hope</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">do</governor>
+            <dependent idx="4">she</dependent>
+          </dep>
+          <dep type="aux">
+            <governor idx="6">do</governor>
+            <dependent idx="5">will</dependent>
+          </dep>
+          <dep type="ccomp">
+            <governor idx="3">hope</governor>
+            <dependent idx="6">do</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="8">now</governor>
+            <dependent idx="7">well</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="6">do</governor>
+            <dependent idx="8">now</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">said</governor>
+            <dependent idx="9">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">said</governor>
+            <dependent idx="10">''</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="13">Lorry</governor>
+            <dependent idx="12">Mr.</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="11">said</governor>
+            <dependent idx="13">Lorry</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">said</governor>
+            <dependent idx="14">.</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+    </sentences>
+    <coreference>
+      <coreference>
+        <mention representative="true">
+          <sentence>1</sentence>
+          <start>12</start>
+          <end>14</end>
+          <head>13</head>
+          <text>Mr. Lorry</text>
+        </mention>
+        <mention>
+          <sentence>1</sentence>
+          <start>2</start>
+          <end>3</end>
+          <head>2</head>
+          <text>I</text>
+        </mention>
+      </coreference>
+    </coreference>
+  </document>
+</root>

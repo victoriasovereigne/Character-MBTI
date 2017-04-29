@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root>
+  <document>
+    <sentences>
+      <sentence id="1">
+        <tokens>
+          <token id="1">
+            <word>``</word>
+            <lemma>``</lemma>
+            <CharacterOffsetBegin>0</CharacterOffsetBegin>
+            <CharacterOffsetEnd>1</CharacterOffsetEnd>
+            <POS>``</POS>
+            <NER>O</NER>
+          </token>
+          <token id="2">
+            <word>Miss</word>
+            <lemma>Miss</lemma>
+            <CharacterOffsetBegin>1</CharacterOffsetBegin>
+            <CharacterOffsetEnd>5</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="3">
+            <word>Manette</word>
+            <lemma>Manette</lemma>
+            <CharacterOffsetBegin>6</CharacterOffsetBegin>
+            <CharacterOffsetEnd>13</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>PERSON</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="4">
+            <word>,</word>
+            <lemma>,</lemma>
+            <CharacterOffsetBegin>13</CharacterOffsetBegin>
+            <CharacterOffsetEnd>14</CharacterOffsetEnd>
+            <POS>,</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="5">
+            <word>then</word>
+            <lemma>then</lemma>
+            <CharacterOffsetBegin>15</CharacterOffsetBegin>
+            <CharacterOffsetEnd>19</CharacterOffsetEnd>
+            <POS>RB</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="6">
+            <word>!</word>
+            <lemma>!</lemma>
+            <CharacterOffsetBegin>19</CharacterOffsetBegin>
+            <CharacterOffsetEnd>20</CharacterOffsetEnd>
+            <POS>.</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="7">
+            <word>''</word>
+            <lemma>''</lemma>
+            <CharacterOffsetBegin>20</CharacterOffsetBegin>
+            <CharacterOffsetEnd>21</CharacterOffsetEnd>
+            <POS>''</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+        </tokens>
+        <parse>(ROOT
+          (FRAG (`` ``)
+          (NP (NNP Miss) (NNP Manette))
+          (, ,)
+          (NP (RB then))
+          (. !) ('' '')))
+          
+          </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">Manette</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">Manette</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="3">Manette</governor>
+            <dependent idx="2">Miss</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">Manette</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="3">Manette</governor>
+            <dependent idx="5">then</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">Manette</governor>
+            <dependent idx="6">!</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">Manette</governor>
+            <dependent idx="7">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">Manette</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">Manette</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="3">Manette</governor>
+            <dependent idx="2">Miss</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">Manette</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="3">Manette</governor>
+            <dependent idx="5">then</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">Manette</governor>
+            <dependent idx="6">!</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">Manette</governor>
+            <dependent idx="7">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">Manette</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">Manette</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="3">Manette</governor>
+            <dependent idx="2">Miss</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">Manette</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="3">Manette</governor>
+            <dependent idx="5">then</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">Manette</governor>
+            <dependent idx="6">!</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">Manette</governor>
+            <dependent idx="7">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">Manette</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">Manette</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="3">Manette</governor>
+            <dependent idx="2">Miss</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">Manette</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="3">Manette</governor>
+            <dependent idx="5">then</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">Manette</governor>
+            <dependent idx="6">!</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">Manette</governor>
+            <dependent idx="7">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-plus-plus-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">Manette</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">Manette</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="3">Manette</governor>
+            <dependent idx="2">Miss</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">Manette</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="3">Manette</governor>
+            <dependent idx="5">then</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">Manette</governor>
+            <dependent idx="6">!</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">Manette</governor>
+            <dependent idx="7">''</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+    </sentences>
+  </document>
+</root>

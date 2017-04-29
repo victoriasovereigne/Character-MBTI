@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root>
+  <document>
+    <sentences>
+      <sentence id="1">
+        <tokens>
+          <token id="1">
+            <word>``</word>
+            <lemma>``</lemma>
+            <CharacterOffsetBegin>0</CharacterOffsetBegin>
+            <CharacterOffsetEnd>1</CharacterOffsetEnd>
+            <POS>``</POS>
+            <NER>O</NER>
+          </token>
+          <token id="2">
+            <word>What</word>
+            <lemma>what</lemma>
+            <CharacterOffsetBegin>1</CharacterOffsetBegin>
+            <CharacterOffsetEnd>5</CharacterOffsetEnd>
+            <POS>WP</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="3">
+            <word>of</word>
+            <lemma>of</lemma>
+            <CharacterOffsetBegin>6</CharacterOffsetBegin>
+            <CharacterOffsetEnd>8</CharacterOffsetEnd>
+            <POS>IN</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="4">
+            <word>Charles</word>
+            <lemma>Charles</lemma>
+            <CharacterOffsetBegin>9</CharacterOffsetBegin>
+            <CharacterOffsetEnd>16</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>PERSON</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="5">
+            <word>?</word>
+            <lemma>?</lemma>
+            <CharacterOffsetBegin>16</CharacterOffsetBegin>
+            <CharacterOffsetEnd>17</CharacterOffsetEnd>
+            <POS>.</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="6">
+            <word>''</word>
+            <lemma>''</lemma>
+            <CharacterOffsetBegin>17</CharacterOffsetBegin>
+            <CharacterOffsetEnd>18</CharacterOffsetEnd>
+            <POS>''</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+        </tokens>
+        <parse>(ROOT
+          (SBARQ (`` ``)
+          (WHNP (WP What))
+          (SQ (IN of)
+          (NP (NNP Charles)))
+          (. ?) ('' '')))
+          
+          </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">of</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">of</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="3">of</governor>
+            <dependent idx="2">What</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="3">of</governor>
+            <dependent idx="4">Charles</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">of</governor>
+            <dependent idx="5">?</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">of</governor>
+            <dependent idx="6">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">of</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">of</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="3">of</governor>
+            <dependent idx="2">What</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="3">of</governor>
+            <dependent idx="4">Charles</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">of</governor>
+            <dependent idx="5">?</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">of</governor>
+            <dependent idx="6">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">of</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">of</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="3">of</governor>
+            <dependent idx="2">What</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="3">of</governor>
+            <dependent idx="4">Charles</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">of</governor>
+            <dependent idx="5">?</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">of</governor>
+            <dependent idx="6">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">of</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">of</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="3">of</governor>
+            <dependent idx="2">What</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="3">of</governor>
+            <dependent idx="4">Charles</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">of</governor>
+            <dependent idx="5">?</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">of</governor>
+            <dependent idx="6">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-plus-plus-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">of</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">of</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="3">of</governor>
+            <dependent idx="2">What</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="3">of</governor>
+            <dependent idx="4">Charles</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">of</governor>
+            <dependent idx="5">?</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">of</governor>
+            <dependent idx="6">''</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+    </sentences>
+  </document>
+</root>

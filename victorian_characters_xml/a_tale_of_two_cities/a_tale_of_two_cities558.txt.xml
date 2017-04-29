@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root>
+  <document>
+    <sentences>
+      <sentence id="1">
+        <tokens>
+          <token id="1">
+            <word>``</word>
+            <lemma>``</lemma>
+            <CharacterOffsetBegin>0</CharacterOffsetBegin>
+            <CharacterOffsetEnd>1</CharacterOffsetEnd>
+            <POS>``</POS>
+            <NER>O</NER>
+          </token>
+          <token id="2">
+            <word>I</word>
+            <lemma>I</lemma>
+            <CharacterOffsetBegin>1</CharacterOffsetBegin>
+            <CharacterOffsetEnd>2</CharacterOffsetEnd>
+            <POS>PRP</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="3">
+            <word>fear</word>
+            <lemma>fear</lemma>
+            <CharacterOffsetBegin>3</CharacterOffsetBegin>
+            <CharacterOffsetEnd>7</CharacterOffsetEnd>
+            <POS>VBP</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="4">
+            <word>not</word>
+            <lemma>not</lemma>
+            <CharacterOffsetBegin>8</CharacterOffsetBegin>
+            <CharacterOffsetEnd>11</CharacterOffsetEnd>
+            <POS>RB</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="5">
+            <word>yet</word>
+            <lemma>yet</lemma>
+            <CharacterOffsetBegin>12</CharacterOffsetBegin>
+            <CharacterOffsetEnd>15</CharacterOffsetEnd>
+            <POS>RB</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="6">
+            <word>.</word>
+            <lemma>.</lemma>
+            <CharacterOffsetBegin>15</CharacterOffsetBegin>
+            <CharacterOffsetEnd>16</CharacterOffsetEnd>
+            <POS>.</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+        </tokens>
+        <parse>(ROOT
+          (S (`` ``)
+          (NP (PRP I))
+          (VP (VBP fear)
+          (ADVP (RB not) (RB yet)))
+          (. .)))
+          
+          </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">fear</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">fear</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">fear</governor>
+            <dependent idx="2">I</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="5">yet</governor>
+            <dependent idx="4">not</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="3">fear</governor>
+            <dependent idx="5">yet</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">fear</governor>
+            <dependent idx="6">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">fear</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">fear</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">fear</governor>
+            <dependent idx="2">I</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="5">yet</governor>
+            <dependent idx="4">not</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="3">fear</governor>
+            <dependent idx="5">yet</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">fear</governor>
+            <dependent idx="6">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">fear</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">fear</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">fear</governor>
+            <dependent idx="2">I</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="5">yet</governor>
+            <dependent idx="4">not</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="3">fear</governor>
+            <dependent idx="5">yet</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">fear</governor>
+            <dependent idx="6">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">fear</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">fear</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">fear</governor>
+            <dependent idx="2">I</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="5">yet</governor>
+            <dependent idx="4">not</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="3">fear</governor>
+            <dependent idx="5">yet</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">fear</governor>
+            <dependent idx="6">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-plus-plus-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">fear</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">fear</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">fear</governor>
+            <dependent idx="2">I</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="5">yet</governor>
+            <dependent idx="4">not</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="3">fear</governor>
+            <dependent idx="5">yet</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">fear</governor>
+            <dependent idx="6">.</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+      <sentence id="2">
+        <tokens>
+          <token id="1">
+            <word>It</word>
+            <lemma>it</lemma>
+            <CharacterOffsetBegin>17</CharacterOffsetBegin>
+            <CharacterOffsetEnd>19</CharacterOffsetEnd>
+            <POS>PRP</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="2">
+            <word>would</word>
+            <lemma>would</lemma>
+            <CharacterOffsetBegin>20</CharacterOffsetBegin>
+            <CharacterOffsetEnd>25</CharacterOffsetEnd>
+            <POS>MD</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="3">
+            <word>be</word>
+            <lemma>be</lemma>
+            <CharacterOffsetBegin>26</CharacterOffsetBegin>
+            <CharacterOffsetEnd>28</CharacterOffsetEnd>
+            <POS>VB</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="4">
+            <word>dangerous</word>
+            <lemma>dangerous</lemma>
+            <CharacterOffsetBegin>29</CharacterOffsetBegin>
+            <CharacterOffsetEnd>38</CharacterOffsetEnd>
+            <POS>JJ</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="5">
+            <word>for</word>
+            <lemma>for</lemma>
+            <CharacterOffsetBegin>39</CharacterOffsetBegin>
+            <CharacterOffsetEnd>42</CharacterOffsetEnd>
+            <POS>IN</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="6">
+            <word>Charles</word>
+            <lemma>Charles</lemma>
+            <CharacterOffsetBegin>43</CharacterOffsetBegin>
+            <CharacterOffsetEnd>50</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>PERSON</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="7">
+            <word>yet</word>
+            <lemma>yet</lemma>
+            <CharacterOffsetBegin>51</CharacterOffsetBegin>
+            <CharacterOffsetEnd>54</CharacterOffsetEnd>
+            <POS>RB</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="8">
+            <word>.</word>
+            <lemma>.</lemma>
+            <CharacterOffsetBegin>54</CharacterOffsetBegin>
+            <CharacterOffsetEnd>55</CharacterOffsetEnd>
+            <POS>.</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="9">
+            <word>''</word>
+            <lemma>''</lemma>
+            <CharacterOffsetBegin>55</CharacterOffsetBegin>
+            <CharacterOffsetEnd>56</CharacterOffsetEnd>
+            <POS>''</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+        </tokens>
+        <parse>(ROOT
+          (S
+          (NP (PRP It))
+          (VP (MD would)
+          (VP (VB be)
+          (ADJP (JJ dangerous)
+          (PP (IN for)
+          (NP (NNP Charles))))
+          (ADVP (RB yet))))
+          (. .) ('' '')))
+          
+          </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="4">dangerous</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="1">It</dependent>
+          </dep>
+          <dep type="aux">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="2">would</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="3">be</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="6">Charles</governor>
+            <dependent idx="5">for</dependent>
+          </dep>
+          <dep type="nmod">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="6">Charles</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="7">yet</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="8">.</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="9">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="4">dangerous</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="1">It</dependent>
+          </dep>
+          <dep type="aux">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="2">would</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="3">be</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="6">Charles</governor>
+            <dependent idx="5">for</dependent>
+          </dep>
+          <dep type="nmod:for">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="6">Charles</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="7">yet</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="8">.</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="9">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="4">dangerous</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="1">It</dependent>
+          </dep>
+          <dep type="aux">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="2">would</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="3">be</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="6">Charles</governor>
+            <dependent idx="5">for</dependent>
+          </dep>
+          <dep type="nmod:for">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="6">Charles</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="7">yet</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="8">.</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="9">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="4">dangerous</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="1">It</dependent>
+          </dep>
+          <dep type="aux">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="2">would</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="3">be</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="6">Charles</governor>
+            <dependent idx="5">for</dependent>
+          </dep>
+          <dep type="nmod:for">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="6">Charles</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="7">yet</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="8">.</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="9">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-plus-plus-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="4">dangerous</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="1">It</dependent>
+          </dep>
+          <dep type="aux">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="2">would</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="3">be</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="6">Charles</governor>
+            <dependent idx="5">for</dependent>
+          </dep>
+          <dep type="nmod:for">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="6">Charles</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="7">yet</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="8">.</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">dangerous</governor>
+            <dependent idx="9">''</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+    </sentences>
+  </document>
+</root>

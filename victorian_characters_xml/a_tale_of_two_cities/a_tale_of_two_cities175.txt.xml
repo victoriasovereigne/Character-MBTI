@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root>
+  <document>
+    <sentences>
+      <sentence id="1">
+        <tokens>
+          <token id="1">
+            <word>``</word>
+            <lemma>``</lemma>
+            <CharacterOffsetBegin>0</CharacterOffsetBegin>
+            <CharacterOffsetEnd>1</CharacterOffsetEnd>
+            <POS>``</POS>
+            <NER>O</NER>
+          </token>
+          <token id="2">
+            <word>My</word>
+            <lemma>my</lemma>
+            <CharacterOffsetBegin>1</CharacterOffsetBegin>
+            <CharacterOffsetEnd>3</CharacterOffsetEnd>
+            <POS>PRP$</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="3">
+            <word>father</word>
+            <lemma>father</lemma>
+            <CharacterOffsetBegin>4</CharacterOffsetBegin>
+            <CharacterOffsetEnd>10</CharacterOffsetEnd>
+            <POS>NN</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="4">
+            <word>,</word>
+            <lemma>,</lemma>
+            <CharacterOffsetBegin>10</CharacterOffsetBegin>
+            <CharacterOffsetEnd>11</CharacterOffsetEnd>
+            <POS>,</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="5">
+            <word>''</word>
+            <lemma>''</lemma>
+            <CharacterOffsetBegin>11</CharacterOffsetBegin>
+            <CharacterOffsetEnd>12</CharacterOffsetEnd>
+            <POS>''</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="6">
+            <word>exclaimed</word>
+            <lemma>exclaim</lemma>
+            <CharacterOffsetBegin>13</CharacterOffsetBegin>
+            <CharacterOffsetEnd>22</CharacterOffsetEnd>
+            <POS>VBD</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="7">
+            <word>Lucie</word>
+            <lemma>Lucie</lemma>
+            <CharacterOffsetBegin>23</CharacterOffsetBegin>
+            <CharacterOffsetEnd>28</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>PERSON</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="8">
+            <word>,</word>
+            <lemma>,</lemma>
+            <CharacterOffsetBegin>28</CharacterOffsetBegin>
+            <CharacterOffsetEnd>29</CharacterOffsetEnd>
+            <POS>,</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="9">
+            <word>``</word>
+            <lemma>``</lemma>
+            <CharacterOffsetBegin>30</CharacterOffsetBegin>
+            <CharacterOffsetEnd>31</CharacterOffsetEnd>
+            <POS>``</POS>
+            <NER>O</NER>
+          </token>
+          <token id="10">
+            <word>you</word>
+            <lemma>you</lemma>
+            <CharacterOffsetBegin>31</CharacterOffsetBegin>
+            <CharacterOffsetEnd>34</CharacterOffsetEnd>
+            <POS>PRP</POS>
+            <NER>O</NER>
+            <Speaker>PER2</Speaker>
+          </token>
+          <token id="11">
+            <word>are</word>
+            <lemma>be</lemma>
+            <CharacterOffsetBegin>35</CharacterOffsetBegin>
+            <CharacterOffsetEnd>38</CharacterOffsetEnd>
+            <POS>VBP</POS>
+            <NER>O</NER>
+            <Speaker>PER2</Speaker>
+          </token>
+          <token id="12">
+            <word>ill</word>
+            <lemma>ill</lemma>
+            <CharacterOffsetBegin>39</CharacterOffsetBegin>
+            <CharacterOffsetEnd>42</CharacterOffsetEnd>
+            <POS>RB</POS>
+            <NER>O</NER>
+            <Speaker>PER2</Speaker>
+          </token>
+          <token id="13">
+            <word>!</word>
+            <lemma>!</lemma>
+            <CharacterOffsetBegin>42</CharacterOffsetBegin>
+            <CharacterOffsetEnd>43</CharacterOffsetEnd>
+            <POS>.</POS>
+            <NER>O</NER>
+            <Speaker>PER2</Speaker>
+          </token>
+          <token id="14">
+            <word>''</word>
+            <lemma>''</lemma>
+            <CharacterOffsetBegin>43</CharacterOffsetBegin>
+            <CharacterOffsetEnd>44</CharacterOffsetEnd>
+            <POS>''</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+        </tokens>
+        <parse>(ROOT
+          (S (`` ``)
+          (NP (PRP$ My) (NN father))
+          (PRN (, ,) ('' '')
+          (SINV
+          (VP (VBD exclaimed))
+          (NP (NNP Lucie)))
+          (, ,))
+          (`` ``)
+          (NP (PRP you))
+          (VP (VBP are)
+          (ADJP (RB ill)))
+          (. !) ('' '')))
+          
+          </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="12">ill</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="12">ill</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="3">father</governor>
+            <dependent idx="2">My</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="12">ill</governor>
+            <dependent idx="3">father</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">exclaimed</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">exclaimed</governor>
+            <dependent idx="5">''</dependent>
+          </dep>
+          <dep type="parataxis">
+            <governor idx="12">ill</governor>
+            <dependent idx="6">exclaimed</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">exclaimed</governor>
+            <dependent idx="7">Lucie</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">exclaimed</governor>
+            <dependent idx="8">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="12">ill</governor>
+            <dependent idx="9">``</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="12">ill</governor>
+            <dependent idx="10">you</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="12">ill</governor>
+            <dependent idx="11">are</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="12">ill</governor>
+            <dependent idx="13">!</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="12">ill</governor>
+            <dependent idx="14">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="12">ill</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="12">ill</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="3">father</governor>
+            <dependent idx="2">My</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="12">ill</governor>
+            <dependent idx="3">father</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">exclaimed</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">exclaimed</governor>
+            <dependent idx="5">''</dependent>
+          </dep>
+          <dep type="parataxis">
+            <governor idx="12">ill</governor>
+            <dependent idx="6">exclaimed</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">exclaimed</governor>
+            <dependent idx="7">Lucie</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">exclaimed</governor>
+            <dependent idx="8">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="12">ill</governor>
+            <dependent idx="9">``</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="12">ill</governor>
+            <dependent idx="10">you</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="12">ill</governor>
+            <dependent idx="11">are</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="12">ill</governor>
+            <dependent idx="13">!</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="12">ill</governor>
+            <dependent idx="14">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="12">ill</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="12">ill</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="3">father</governor>
+            <dependent idx="2">My</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="12">ill</governor>
+            <dependent idx="3">father</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">exclaimed</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">exclaimed</governor>
+            <dependent idx="5">''</dependent>
+          </dep>
+          <dep type="parataxis">
+            <governor idx="12">ill</governor>
+            <dependent idx="6">exclaimed</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">exclaimed</governor>
+            <dependent idx="7">Lucie</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">exclaimed</governor>
+            <dependent idx="8">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="12">ill</governor>
+            <dependent idx="9">``</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="12">ill</governor>
+            <dependent idx="10">you</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="12">ill</governor>
+            <dependent idx="11">are</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="12">ill</governor>
+            <dependent idx="13">!</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="12">ill</governor>
+            <dependent idx="14">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="12">ill</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="12">ill</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="3">father</governor>
+            <dependent idx="2">My</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="12">ill</governor>
+            <dependent idx="3">father</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">exclaimed</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">exclaimed</governor>
+            <dependent idx="5">''</dependent>
+          </dep>
+          <dep type="parataxis">
+            <governor idx="12">ill</governor>
+            <dependent idx="6">exclaimed</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">exclaimed</governor>
+            <dependent idx="7">Lucie</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">exclaimed</governor>
+            <dependent idx="8">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="12">ill</governor>
+            <dependent idx="9">``</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="12">ill</governor>
+            <dependent idx="10">you</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="12">ill</governor>
+            <dependent idx="11">are</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="12">ill</governor>
+            <dependent idx="13">!</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="12">ill</governor>
+            <dependent idx="14">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-plus-plus-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="12">ill</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="12">ill</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="3">father</governor>
+            <dependent idx="2">My</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="12">ill</governor>
+            <dependent idx="3">father</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">exclaimed</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">exclaimed</governor>
+            <dependent idx="5">''</dependent>
+          </dep>
+          <dep type="parataxis">
+            <governor idx="12">ill</governor>
+            <dependent idx="6">exclaimed</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">exclaimed</governor>
+            <dependent idx="7">Lucie</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">exclaimed</governor>
+            <dependent idx="8">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="12">ill</governor>
+            <dependent idx="9">``</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="12">ill</governor>
+            <dependent idx="10">you</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="12">ill</governor>
+            <dependent idx="11">are</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="12">ill</governor>
+            <dependent idx="13">!</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="12">ill</governor>
+            <dependent idx="14">''</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+    </sentences>
+  </document>
+</root>

@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root>
+  <document>
+    <sentences>
+      <sentence id="1">
+        <tokens>
+          <token id="1">
+            <word>``</word>
+            <lemma>``</lemma>
+            <CharacterOffsetBegin>0</CharacterOffsetBegin>
+            <CharacterOffsetEnd>1</CharacterOffsetEnd>
+            <POS>``</POS>
+            <NER>O</NER>
+          </token>
+          <token id="2">
+            <word>For</word>
+            <lemma>for</lemma>
+            <CharacterOffsetBegin>1</CharacterOffsetBegin>
+            <CharacterOffsetEnd>4</CharacterOffsetEnd>
+            <POS>IN</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="3">
+            <word>instance</word>
+            <lemma>instance</lemma>
+            <CharacterOffsetBegin>5</CharacterOffsetBegin>
+            <CharacterOffsetEnd>13</CharacterOffsetEnd>
+            <POS>NN</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="4">
+            <word>,</word>
+            <lemma>,</lemma>
+            <CharacterOffsetBegin>13</CharacterOffsetBegin>
+            <CharacterOffsetEnd>14</CharacterOffsetEnd>
+            <POS>,</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="5">
+            <word>''</word>
+            <lemma>''</lemma>
+            <CharacterOffsetBegin>14</CharacterOffsetBegin>
+            <CharacterOffsetEnd>15</CharacterOffsetEnd>
+            <POS>''</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="6">
+            <word>returned</word>
+            <lemma>return</lemma>
+            <CharacterOffsetBegin>16</CharacterOffsetBegin>
+            <CharacterOffsetEnd>24</CharacterOffsetEnd>
+            <POS>VBD</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="7">
+            <word>Madame</word>
+            <lemma>Madame</lemma>
+            <CharacterOffsetBegin>25</CharacterOffsetBegin>
+            <CharacterOffsetEnd>31</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>PERSON</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="8">
+            <word>Defarge</word>
+            <lemma>Defarge</lemma>
+            <CharacterOffsetBegin>32</CharacterOffsetBegin>
+            <CharacterOffsetEnd>39</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>PERSON</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="9">
+            <word>,</word>
+            <lemma>,</lemma>
+            <CharacterOffsetBegin>39</CharacterOffsetBegin>
+            <CharacterOffsetEnd>40</CharacterOffsetEnd>
+            <POS>,</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="10">
+            <word>composedly</word>
+            <lemma>composedly</lemma>
+            <CharacterOffsetBegin>41</CharacterOffsetBegin>
+            <CharacterOffsetEnd>51</CharacterOffsetEnd>
+            <POS>RB</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="11">
+            <word>,</word>
+            <lemma>,</lemma>
+            <CharacterOffsetBegin>51</CharacterOffsetBegin>
+            <CharacterOffsetEnd>52</CharacterOffsetEnd>
+            <POS>,</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="12">
+            <word>``</word>
+            <lemma>``</lemma>
+            <CharacterOffsetBegin>53</CharacterOffsetBegin>
+            <CharacterOffsetEnd>54</CharacterOffsetEnd>
+            <POS>``</POS>
+            <NER>O</NER>
+          </token>
+          <token id="13">
+            <word>shrouds</word>
+            <lemma>shroud</lemma>
+            <CharacterOffsetBegin>54</CharacterOffsetBegin>
+            <CharacterOffsetEnd>61</CharacterOffsetEnd>
+            <POS>NNS</POS>
+            <NER>O</NER>
+            <Speaker>PER2</Speaker>
+          </token>
+          <token id="14">
+            <word>.</word>
+            <lemma>.</lemma>
+            <CharacterOffsetBegin>61</CharacterOffsetBegin>
+            <CharacterOffsetEnd>62</CharacterOffsetEnd>
+            <POS>.</POS>
+            <NER>O</NER>
+            <Speaker>PER2</Speaker>
+          </token>
+          <token id="15">
+            <word>''</word>
+            <lemma>''</lemma>
+            <CharacterOffsetBegin>62</CharacterOffsetBegin>
+            <CharacterOffsetEnd>63</CharacterOffsetEnd>
+            <POS>''</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+        </tokens>
+        <parse>(ROOT
+          (SINV (`` ``)
+          (FRAG
+          (PP (IN For)
+          (NP (NN instance))))
+          (, ,) ('' '')
+          (VP (VBD returned))
+          (NP
+          (NP
+          (NP (NNP Madame) (NNP Defarge))
+          (, ,)
+          (ADVP (RB composedly)))
+          (, ,)
+          (NP (`` ``) (NNS shrouds)))
+          (. .) ('' '')))
+          
+          </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="6">returned</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="3">instance</governor>
+            <dependent idx="2">For</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="6">returned</governor>
+            <dependent idx="3">instance</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="5">''</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="7">Madame</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">returned</governor>
+            <dependent idx="8">Defarge</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="9">,</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="10">composedly</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="11">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="13">shrouds</governor>
+            <dependent idx="12">``</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="13">shrouds</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="14">.</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="15">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="6">returned</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="3">instance</governor>
+            <dependent idx="2">For</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="6">returned</governor>
+            <dependent idx="3">instance</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="5">''</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="7">Madame</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">returned</governor>
+            <dependent idx="8">Defarge</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="9">,</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="10">composedly</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="11">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="13">shrouds</governor>
+            <dependent idx="12">``</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="13">shrouds</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="14">.</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="15">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="6">returned</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="3">instance</governor>
+            <dependent idx="2">For</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="6">returned</governor>
+            <dependent idx="3">instance</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="5">''</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="7">Madame</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">returned</governor>
+            <dependent idx="8">Defarge</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="9">,</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="10">composedly</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="11">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="13">shrouds</governor>
+            <dependent idx="12">``</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="13">shrouds</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="14">.</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="15">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="6">returned</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="3">instance</governor>
+            <dependent idx="2">For</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="6">returned</governor>
+            <dependent idx="3">instance</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="5">''</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="7">Madame</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">returned</governor>
+            <dependent idx="8">Defarge</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="9">,</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="10">composedly</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="11">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="13">shrouds</governor>
+            <dependent idx="12">``</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="13">shrouds</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="14">.</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="15">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-plus-plus-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="6">returned</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="3">instance</governor>
+            <dependent idx="2">For</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="6">returned</governor>
+            <dependent idx="3">instance</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="5">''</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="7">Madame</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">returned</governor>
+            <dependent idx="8">Defarge</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="9">,</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="10">composedly</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="11">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="13">shrouds</governor>
+            <dependent idx="12">``</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="8">Defarge</governor>
+            <dependent idx="13">shrouds</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="14">.</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">returned</governor>
+            <dependent idx="15">''</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+    </sentences>
+  </document>
+</root>

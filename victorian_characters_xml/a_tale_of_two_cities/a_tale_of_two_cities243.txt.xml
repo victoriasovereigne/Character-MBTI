@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root>
+  <document>
+    <sentences>
+      <sentence id="1">
+        <tokens>
+          <token id="1">
+            <word>Mr.</word>
+            <lemma>Mr.</lemma>
+            <CharacterOffsetBegin>0</CharacterOffsetBegin>
+            <CharacterOffsetEnd>3</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="2">
+            <word>Lorry</word>
+            <lemma>Lorry</lemma>
+            <CharacterOffsetBegin>4</CharacterOffsetBegin>
+            <CharacterOffsetEnd>9</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>PERSON</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="3">
+            <word>glanced</word>
+            <lemma>glance</lemma>
+            <CharacterOffsetBegin>10</CharacterOffsetBegin>
+            <CharacterOffsetEnd>17</CharacterOffsetEnd>
+            <POS>VBD</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="4">
+            <word>at</word>
+            <lemma>at</lemma>
+            <CharacterOffsetBegin>18</CharacterOffsetBegin>
+            <CharacterOffsetEnd>20</CharacterOffsetEnd>
+            <POS>IN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="5">
+            <word>the</word>
+            <lemma>the</lemma>
+            <CharacterOffsetBegin>21</CharacterOffsetBegin>
+            <CharacterOffsetEnd>24</CharacterOffsetEnd>
+            <POS>DT</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="6">
+            <word>distant</word>
+            <lemma>distant</lemma>
+            <CharacterOffsetBegin>25</CharacterOffsetBegin>
+            <CharacterOffsetEnd>32</CharacterOffsetEnd>
+            <POS>JJ</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="7">
+            <word>House</word>
+            <lemma>House</lemma>
+            <CharacterOffsetBegin>33</CharacterOffsetBegin>
+            <CharacterOffsetEnd>38</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>ORGANIZATION</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="8">
+            <word>,</word>
+            <lemma>,</lemma>
+            <CharacterOffsetBegin>38</CharacterOffsetBegin>
+            <CharacterOffsetEnd>39</CharacterOffsetEnd>
+            <POS>,</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="9">
+            <word>and</word>
+            <lemma>and</lemma>
+            <CharacterOffsetBegin>40</CharacterOffsetBegin>
+            <CharacterOffsetEnd>43</CharacterOffsetEnd>
+            <POS>CC</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="10">
+            <word>glanced</word>
+            <lemma>glance</lemma>
+            <CharacterOffsetBegin>44</CharacterOffsetBegin>
+            <CharacterOffsetEnd>51</CharacterOffsetEnd>
+            <POS>VBD</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="11">
+            <word>at</word>
+            <lemma>at</lemma>
+            <CharacterOffsetBegin>52</CharacterOffsetBegin>
+            <CharacterOffsetEnd>54</CharacterOffsetEnd>
+            <POS>IN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="12">
+            <word>the</word>
+            <lemma>the</lemma>
+            <CharacterOffsetBegin>55</CharacterOffsetBegin>
+            <CharacterOffsetEnd>58</CharacterOffsetEnd>
+            <POS>DT</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="13">
+            <word>angry</word>
+            <lemma>angry</lemma>
+            <CharacterOffsetBegin>59</CharacterOffsetBegin>
+            <CharacterOffsetEnd>64</CharacterOffsetEnd>
+            <POS>JJ</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="14">
+            <word>Stryver</word>
+            <lemma>Stryver</lemma>
+            <CharacterOffsetBegin>65</CharacterOffsetBegin>
+            <CharacterOffsetEnd>72</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="15">
+            <word>.</word>
+            <lemma>.</lemma>
+            <CharacterOffsetBegin>72</CharacterOffsetBegin>
+            <CharacterOffsetEnd>73</CharacterOffsetEnd>
+            <POS>.</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+        </tokens>
+        <parse>(ROOT
+          (S
+          (NP (NNP Mr.) (NNP Lorry))
+          (VP
+          (VP (VBD glanced)
+          (PP (IN at)
+          (NP (DT the) (JJ distant) (NNP House))))
+          (, ,)
+          (CC and)
+          (VP (VBD glanced)
+          (PP (IN at)
+          (NP (DT the) (JJ angry) (NNP Stryver)))))
+          (. .)))
+          
+          </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">glanced</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="2">Lorry</governor>
+            <dependent idx="1">Mr.</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">glanced</governor>
+            <dependent idx="2">Lorry</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="7">House</governor>
+            <dependent idx="4">at</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="7">House</governor>
+            <dependent idx="5">the</dependent>
+          </dep>
+          <dep type="amod">
+            <governor idx="7">House</governor>
+            <dependent idx="6">distant</dependent>
+          </dep>
+          <dep type="nmod">
+            <governor idx="3">glanced</governor>
+            <dependent idx="7">House</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">glanced</governor>
+            <dependent idx="8">,</dependent>
+          </dep>
+          <dep type="cc">
+            <governor idx="3">glanced</governor>
+            <dependent idx="9">and</dependent>
+          </dep>
+          <dep type="conj">
+            <governor idx="3">glanced</governor>
+            <dependent idx="10">glanced</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="14">Stryver</governor>
+            <dependent idx="11">at</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="14">Stryver</governor>
+            <dependent idx="12">the</dependent>
+          </dep>
+          <dep type="amod">
+            <governor idx="14">Stryver</governor>
+            <dependent idx="13">angry</dependent>
+          </dep>
+          <dep type="nmod">
+            <governor idx="10">glanced</governor>
+            <dependent idx="14">Stryver</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">glanced</governor>
+            <dependent idx="15">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">glanced</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="2">Lorry</governor>
+            <dependent idx="1">Mr.</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">glanced</governor>
+            <dependent idx="2">Lorry</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="7">House</governor>
+            <dependent idx="4">at</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="7">House</governor>
+            <dependent idx="5">the</dependent>
+          </dep>
+          <dep type="amod">
+            <governor idx="7">House</governor>
+            <dependent idx="6">distant</dependent>
+          </dep>
+          <dep type="nmod:at">
+            <governor idx="3">glanced</governor>
+            <dependent idx="7">House</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">glanced</governor>
+            <dependent idx="8">,</dependent>
+          </dep>
+          <dep type="cc">
+            <governor idx="3">glanced</governor>
+            <dependent idx="9">and</dependent>
+          </dep>
+          <dep type="conj:and">
+            <governor idx="3">glanced</governor>
+            <dependent idx="10">glanced</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="14">Stryver</governor>
+            <dependent idx="11">at</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="14">Stryver</governor>
+            <dependent idx="12">the</dependent>
+          </dep>
+          <dep type="amod">
+            <governor idx="14">Stryver</governor>
+            <dependent idx="13">angry</dependent>
+          </dep>
+          <dep type="nmod:at">
+            <governor idx="10">glanced</governor>
+            <dependent idx="14">Stryver</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">glanced</governor>
+            <dependent idx="15">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">glanced</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="2">Lorry</governor>
+            <dependent idx="1">Mr.</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">glanced</governor>
+            <dependent idx="2">Lorry</dependent>
+          </dep>
+          <dep type="nsubj" extra="true">
+            <governor idx="10">glanced</governor>
+            <dependent idx="2">Lorry</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="7">House</governor>
+            <dependent idx="4">at</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="7">House</governor>
+            <dependent idx="5">the</dependent>
+          </dep>
+          <dep type="amod">
+            <governor idx="7">House</governor>
+            <dependent idx="6">distant</dependent>
+          </dep>
+          <dep type="nmod:at">
+            <governor idx="3">glanced</governor>
+            <dependent idx="7">House</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">glanced</governor>
+            <dependent idx="8">,</dependent>
+          </dep>
+          <dep type="cc">
+            <governor idx="3">glanced</governor>
+            <dependent idx="9">and</dependent>
+          </dep>
+          <dep type="conj:and">
+            <governor idx="3">glanced</governor>
+            <dependent idx="10">glanced</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="14">Stryver</governor>
+            <dependent idx="11">at</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="14">Stryver</governor>
+            <dependent idx="12">the</dependent>
+          </dep>
+          <dep type="amod">
+            <governor idx="14">Stryver</governor>
+            <dependent idx="13">angry</dependent>
+          </dep>
+          <dep type="nmod:at">
+            <governor idx="10">glanced</governor>
+            <dependent idx="14">Stryver</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">glanced</governor>
+            <dependent idx="15">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">glanced</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="2">Lorry</governor>
+            <dependent idx="1">Mr.</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">glanced</governor>
+            <dependent idx="2">Lorry</dependent>
+          </dep>
+          <dep type="nsubj" extra="true">
+            <governor idx="10">glanced</governor>
+            <dependent idx="2">Lorry</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="7">House</governor>
+            <dependent idx="4">at</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="7">House</governor>
+            <dependent idx="5">the</dependent>
+          </dep>
+          <dep type="amod">
+            <governor idx="7">House</governor>
+            <dependent idx="6">distant</dependent>
+          </dep>
+          <dep type="nmod:at">
+            <governor idx="3">glanced</governor>
+            <dependent idx="7">House</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">glanced</governor>
+            <dependent idx="8">,</dependent>
+          </dep>
+          <dep type="cc">
+            <governor idx="3">glanced</governor>
+            <dependent idx="9">and</dependent>
+          </dep>
+          <dep type="conj:and">
+            <governor idx="3">glanced</governor>
+            <dependent idx="10">glanced</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="14">Stryver</governor>
+            <dependent idx="11">at</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="14">Stryver</governor>
+            <dependent idx="12">the</dependent>
+          </dep>
+          <dep type="amod">
+            <governor idx="14">Stryver</governor>
+            <dependent idx="13">angry</dependent>
+          </dep>
+          <dep type="nmod:at">
+            <governor idx="10">glanced</governor>
+            <dependent idx="14">Stryver</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">glanced</governor>
+            <dependent idx="15">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-plus-plus-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">glanced</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="2">Lorry</governor>
+            <dependent idx="1">Mr.</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">glanced</governor>
+            <dependent idx="2">Lorry</dependent>
+          </dep>
+          <dep type="nsubj" extra="true">
+            <governor idx="10">glanced</governor>
+            <dependent idx="2">Lorry</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="7">House</governor>
+            <dependent idx="4">at</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="7">House</governor>
+            <dependent idx="5">the</dependent>
+          </dep>
+          <dep type="amod">
+            <governor idx="7">House</governor>
+            <dependent idx="6">distant</dependent>
+          </dep>
+          <dep type="nmod:at">
+            <governor idx="3">glanced</governor>
+            <dependent idx="7">House</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">glanced</governor>
+            <dependent idx="8">,</dependent>
+          </dep>
+          <dep type="cc">
+            <governor idx="3">glanced</governor>
+            <dependent idx="9">and</dependent>
+          </dep>
+          <dep type="conj:and">
+            <governor idx="3">glanced</governor>
+            <dependent idx="10">glanced</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="14">Stryver</governor>
+            <dependent idx="11">at</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="14">Stryver</governor>
+            <dependent idx="12">the</dependent>
+          </dep>
+          <dep type="amod">
+            <governor idx="14">Stryver</governor>
+            <dependent idx="13">angry</dependent>
+          </dep>
+          <dep type="nmod:at">
+            <governor idx="10">glanced</governor>
+            <dependent idx="14">Stryver</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">glanced</governor>
+            <dependent idx="15">.</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+    </sentences>
+  </document>
+</root>

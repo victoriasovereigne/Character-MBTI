@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root>
+  <document>
+    <sentences>
+      <sentence id="1">
+        <tokens>
+          <token id="1">
+            <word>``</word>
+            <lemma>``</lemma>
+            <CharacterOffsetBegin>0</CharacterOffsetBegin>
+            <CharacterOffsetEnd>1</CharacterOffsetEnd>
+            <POS>``</POS>
+            <NER>O</NER>
+          </token>
+          <token id="2">
+            <word>My</word>
+            <lemma>my</lemma>
+            <CharacterOffsetBegin>1</CharacterOffsetBegin>
+            <CharacterOffsetEnd>3</CharacterOffsetEnd>
+            <POS>PRP$</POS>
+            <NER>O</NER>
+            <Speaker>3</Speaker>
+          </token>
+          <token id="3">
+            <word>father</word>
+            <lemma>father</lemma>
+            <CharacterOffsetBegin>4</CharacterOffsetBegin>
+            <CharacterOffsetEnd>10</CharacterOffsetEnd>
+            <POS>NN</POS>
+            <NER>O</NER>
+            <Speaker>3</Speaker>
+          </token>
+          <token id="4">
+            <word>,</word>
+            <lemma>,</lemma>
+            <CharacterOffsetBegin>10</CharacterOffsetBegin>
+            <CharacterOffsetEnd>11</CharacterOffsetEnd>
+            <POS>,</POS>
+            <NER>O</NER>
+            <Speaker>3</Speaker>
+          </token>
+          <token id="5">
+            <word>''</word>
+            <lemma>''</lemma>
+            <CharacterOffsetBegin>11</CharacterOffsetBegin>
+            <CharacterOffsetEnd>12</CharacterOffsetEnd>
+            <POS>''</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="6">
+            <word>said</word>
+            <lemma>say</lemma>
+            <CharacterOffsetBegin>13</CharacterOffsetBegin>
+            <CharacterOffsetEnd>17</CharacterOffsetEnd>
+            <POS>VBD</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="7">
+            <word>Lucie</word>
+            <lemma>Lucie</lemma>
+            <CharacterOffsetBegin>18</CharacterOffsetBegin>
+            <CharacterOffsetEnd>23</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>PERSON</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="8">
+            <word>,</word>
+            <lemma>,</lemma>
+            <CharacterOffsetBegin>23</CharacterOffsetBegin>
+            <CharacterOffsetEnd>24</CharacterOffsetEnd>
+            <POS>,</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="9">
+            <word>softly</word>
+            <lemma>softly</lemma>
+            <CharacterOffsetBegin>25</CharacterOffsetBegin>
+            <CharacterOffsetEnd>31</CharacterOffsetEnd>
+            <POS>RB</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="10">
+            <word>laying</word>
+            <lemma>lay</lemma>
+            <CharacterOffsetBegin>32</CharacterOffsetBegin>
+            <CharacterOffsetEnd>38</CharacterOffsetEnd>
+            <POS>VBG</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="11">
+            <word>her</word>
+            <lemma>she</lemma>
+            <CharacterOffsetBegin>39</CharacterOffsetBegin>
+            <CharacterOffsetEnd>42</CharacterOffsetEnd>
+            <POS>PRP$</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="12">
+            <word>hand</word>
+            <lemma>hand</lemma>
+            <CharacterOffsetBegin>43</CharacterOffsetBegin>
+            <CharacterOffsetEnd>47</CharacterOffsetEnd>
+            <POS>NN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="13">
+            <word>on</word>
+            <lemma>on</lemma>
+            <CharacterOffsetBegin>48</CharacterOffsetBegin>
+            <CharacterOffsetEnd>50</CharacterOffsetEnd>
+            <POS>IN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="14">
+            <word>his</word>
+            <lemma>he</lemma>
+            <CharacterOffsetBegin>51</CharacterOffsetBegin>
+            <CharacterOffsetEnd>54</CharacterOffsetEnd>
+            <POS>PRP$</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="15">
+            <word>.</word>
+            <lemma>.</lemma>
+            <CharacterOffsetBegin>54</CharacterOffsetBegin>
+            <CharacterOffsetEnd>55</CharacterOffsetEnd>
+            <POS>.</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+        </tokens>
+        <parse>(ROOT
+          (S
+          (NP (`` ``)
+          (NP (PRP$ My) (NN father))
+          (, ,) ('' ''))
+          (VP (VBD said)
+          (NP (NNP Lucie))
+          (, ,)
+          (S
+          (ADVP (RB softly))
+          (VP (VBG laying)
+          (NP (PRP$ her) (NN hand))
+          (PP (IN on)
+          (NP (PRP$ his))))))
+          (. .)))
+          
+          </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="6">said</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">father</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="3">father</governor>
+            <dependent idx="2">My</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">said</governor>
+            <dependent idx="3">father</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">father</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">father</governor>
+            <dependent idx="5">''</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="6">said</governor>
+            <dependent idx="7">Lucie</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">said</governor>
+            <dependent idx="8">,</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="10">laying</governor>
+            <dependent idx="9">softly</dependent>
+          </dep>
+          <dep type="advcl">
+            <governor idx="6">said</governor>
+            <dependent idx="10">laying</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="12">hand</governor>
+            <dependent idx="11">her</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="10">laying</governor>
+            <dependent idx="12">hand</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="14">his</governor>
+            <dependent idx="13">on</dependent>
+          </dep>
+          <dep type="nmod">
+            <governor idx="10">laying</governor>
+            <dependent idx="14">his</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">said</governor>
+            <dependent idx="15">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="6">said</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">father</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="3">father</governor>
+            <dependent idx="2">My</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">said</governor>
+            <dependent idx="3">father</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">father</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">father</governor>
+            <dependent idx="5">''</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="6">said</governor>
+            <dependent idx="7">Lucie</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">said</governor>
+            <dependent idx="8">,</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="10">laying</governor>
+            <dependent idx="9">softly</dependent>
+          </dep>
+          <dep type="advcl">
+            <governor idx="6">said</governor>
+            <dependent idx="10">laying</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="12">hand</governor>
+            <dependent idx="11">her</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="10">laying</governor>
+            <dependent idx="12">hand</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="14">his</governor>
+            <dependent idx="13">on</dependent>
+          </dep>
+          <dep type="nmod:on">
+            <governor idx="10">laying</governor>
+            <dependent idx="14">his</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">said</governor>
+            <dependent idx="15">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="6">said</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">father</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="3">father</governor>
+            <dependent idx="2">My</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">said</governor>
+            <dependent idx="3">father</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">father</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">father</governor>
+            <dependent idx="5">''</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="6">said</governor>
+            <dependent idx="7">Lucie</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">said</governor>
+            <dependent idx="8">,</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="10">laying</governor>
+            <dependent idx="9">softly</dependent>
+          </dep>
+          <dep type="advcl">
+            <governor idx="6">said</governor>
+            <dependent idx="10">laying</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="12">hand</governor>
+            <dependent idx="11">her</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="10">laying</governor>
+            <dependent idx="12">hand</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="14">his</governor>
+            <dependent idx="13">on</dependent>
+          </dep>
+          <dep type="nmod:on">
+            <governor idx="10">laying</governor>
+            <dependent idx="14">his</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">said</governor>
+            <dependent idx="15">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="6">said</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">father</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="3">father</governor>
+            <dependent idx="2">My</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">said</governor>
+            <dependent idx="3">father</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">father</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">father</governor>
+            <dependent idx="5">''</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="6">said</governor>
+            <dependent idx="7">Lucie</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">said</governor>
+            <dependent idx="8">,</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="10">laying</governor>
+            <dependent idx="9">softly</dependent>
+          </dep>
+          <dep type="advcl">
+            <governor idx="6">said</governor>
+            <dependent idx="10">laying</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="12">hand</governor>
+            <dependent idx="11">her</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="10">laying</governor>
+            <dependent idx="12">hand</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="14">his</governor>
+            <dependent idx="13">on</dependent>
+          </dep>
+          <dep type="nmod:on">
+            <governor idx="10">laying</governor>
+            <dependent idx="14">his</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">said</governor>
+            <dependent idx="15">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-plus-plus-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="6">said</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">father</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="3">father</governor>
+            <dependent idx="2">My</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">said</governor>
+            <dependent idx="3">father</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">father</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">father</governor>
+            <dependent idx="5">''</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="6">said</governor>
+            <dependent idx="7">Lucie</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">said</governor>
+            <dependent idx="8">,</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="10">laying</governor>
+            <dependent idx="9">softly</dependent>
+          </dep>
+          <dep type="advcl">
+            <governor idx="6">said</governor>
+            <dependent idx="10">laying</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="12">hand</governor>
+            <dependent idx="11">her</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="10">laying</governor>
+            <dependent idx="12">hand</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="14">his</governor>
+            <dependent idx="13">on</dependent>
+          </dep>
+          <dep type="nmod:on">
+            <governor idx="10">laying</governor>
+            <dependent idx="14">his</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="6">said</governor>
+            <dependent idx="15">.</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+    </sentences>
+    <coreference>
+      <coreference>
+        <mention representative="true">
+          <sentence>1</sentence>
+          <start>1</start>
+          <end>6</end>
+          <head>3</head>
+          <text>`` My father , ''</text>
+        </mention>
+        <mention>
+          <sentence>1</sentence>
+          <start>14</start>
+          <end>15</end>
+          <head>14</head>
+          <text>his</text>
+        </mention>
+      </coreference>
+      <coreference>
+        <mention representative="true">
+          <sentence>1</sentence>
+          <start>2</start>
+          <end>3</end>
+          <head>2</head>
+          <text>My</text>
+        </mention>
+        <mention>
+          <sentence>1</sentence>
+          <start>11</start>
+          <end>12</end>
+          <head>11</head>
+          <text>her</text>
+        </mention>
+      </coreference>
+    </coreference>
+  </document>
+</root>

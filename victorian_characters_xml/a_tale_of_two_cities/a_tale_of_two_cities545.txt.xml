@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root>
+  <document>
+    <sentences>
+      <sentence id="1">
+        <tokens>
+          <token id="1">
+            <word>``</word>
+            <lemma>``</lemma>
+            <CharacterOffsetBegin>0</CharacterOffsetBegin>
+            <CharacterOffsetEnd>1</CharacterOffsetEnd>
+            <POS>``</POS>
+            <NER>O</NER>
+          </token>
+          <token id="2">
+            <word>Charles</word>
+            <lemma>Charles</lemma>
+            <CharacterOffsetBegin>1</CharacterOffsetBegin>
+            <CharacterOffsetEnd>8</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>PERSON</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="3">
+            <word>Evremonde</word>
+            <lemma>Evremonde</lemma>
+            <CharacterOffsetBegin>9</CharacterOffsetBegin>
+            <CharacterOffsetEnd>18</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>PERSON</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="4">
+            <word>,</word>
+            <lemma>,</lemma>
+            <CharacterOffsetBegin>18</CharacterOffsetBegin>
+            <CharacterOffsetEnd>19</CharacterOffsetEnd>
+            <POS>,</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="5">
+            <word>called</word>
+            <lemma>call</lemma>
+            <CharacterOffsetBegin>20</CharacterOffsetBegin>
+            <CharacterOffsetEnd>26</CharacterOffsetEnd>
+            <POS>VBD</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="6">
+            <word>Darnay</word>
+            <lemma>Darnay</lemma>
+            <CharacterOffsetBegin>27</CharacterOffsetBegin>
+            <CharacterOffsetEnd>33</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>PERSON</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="7">
+            <word>,</word>
+            <lemma>,</lemma>
+            <CharacterOffsetBegin>33</CharacterOffsetBegin>
+            <CharacterOffsetEnd>34</CharacterOffsetEnd>
+            <POS>,</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="8">
+            <word>''</word>
+            <lemma>''</lemma>
+            <CharacterOffsetBegin>34</CharacterOffsetBegin>
+            <CharacterOffsetEnd>35</CharacterOffsetEnd>
+            <POS>''</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="9">
+            <word>was</word>
+            <lemma>be</lemma>
+            <CharacterOffsetBegin>36</CharacterOffsetBegin>
+            <CharacterOffsetEnd>39</CharacterOffsetEnd>
+            <POS>VBD</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="10">
+            <word>at</word>
+            <lemma>at</lemma>
+            <CharacterOffsetBegin>40</CharacterOffsetBegin>
+            <CharacterOffsetEnd>42</CharacterOffsetEnd>
+            <POS>IN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="11">
+            <word>length</word>
+            <lemma>length</lemma>
+            <CharacterOffsetBegin>43</CharacterOffsetBegin>
+            <CharacterOffsetEnd>49</CharacterOffsetEnd>
+            <POS>NN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="12">
+            <word>arraigned</word>
+            <lemma>arraign</lemma>
+            <CharacterOffsetBegin>50</CharacterOffsetBegin>
+            <CharacterOffsetEnd>59</CharacterOffsetEnd>
+            <POS>VBN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="13">
+            <word>.</word>
+            <lemma>.</lemma>
+            <CharacterOffsetBegin>59</CharacterOffsetBegin>
+            <CharacterOffsetEnd>60</CharacterOffsetEnd>
+            <POS>.</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+        </tokens>
+        <parse>(ROOT
+          (S (`` ``)
+          (NP (NNP Charles) (NNP Evremonde))
+          (, ,)
+          (S
+          (VP (VBD called)
+          (NP (NNP Darnay))))
+          (, ,) ('' '')
+          (VP (VBD was)
+          (PP (IN at)
+          (NP
+          (NP (NN length))
+          (VP (VBN arraigned)))))
+          (. .)))
+          
+          </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="11">length</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="3">Evremonde</governor>
+            <dependent idx="2">Charles</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="11">length</governor>
+            <dependent idx="3">Evremonde</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="ccomp">
+            <governor idx="11">length</governor>
+            <dependent idx="5">called</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="5">called</governor>
+            <dependent idx="6">Darnay</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="7">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="8">''</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="11">length</governor>
+            <dependent idx="9">was</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="11">length</governor>
+            <dependent idx="10">at</dependent>
+          </dep>
+          <dep type="acl">
+            <governor idx="11">length</governor>
+            <dependent idx="12">arraigned</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="13">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="11">length</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="3">Evremonde</governor>
+            <dependent idx="2">Charles</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="11">length</governor>
+            <dependent idx="3">Evremonde</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="ccomp">
+            <governor idx="11">length</governor>
+            <dependent idx="5">called</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="5">called</governor>
+            <dependent idx="6">Darnay</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="7">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="8">''</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="11">length</governor>
+            <dependent idx="9">was</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="11">length</governor>
+            <dependent idx="10">at</dependent>
+          </dep>
+          <dep type="acl">
+            <governor idx="11">length</governor>
+            <dependent idx="12">arraigned</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="13">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="11">length</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="3">Evremonde</governor>
+            <dependent idx="2">Charles</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="11">length</governor>
+            <dependent idx="3">Evremonde</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="ccomp">
+            <governor idx="11">length</governor>
+            <dependent idx="5">called</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="5">called</governor>
+            <dependent idx="6">Darnay</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="7">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="8">''</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="11">length</governor>
+            <dependent idx="9">was</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="11">length</governor>
+            <dependent idx="10">at</dependent>
+          </dep>
+          <dep type="acl">
+            <governor idx="11">length</governor>
+            <dependent idx="12">arraigned</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="13">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="11">length</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="3">Evremonde</governor>
+            <dependent idx="2">Charles</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="11">length</governor>
+            <dependent idx="3">Evremonde</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="ccomp">
+            <governor idx="11">length</governor>
+            <dependent idx="5">called</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="5">called</governor>
+            <dependent idx="6">Darnay</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="7">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="8">''</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="11">length</governor>
+            <dependent idx="9">was</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="11">length</governor>
+            <dependent idx="10">at</dependent>
+          </dep>
+          <dep type="acl">
+            <governor idx="11">length</governor>
+            <dependent idx="12">arraigned</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="13">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-plus-plus-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="11">length</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="3">Evremonde</governor>
+            <dependent idx="2">Charles</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="11">length</governor>
+            <dependent idx="3">Evremonde</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="4">,</dependent>
+          </dep>
+          <dep type="ccomp">
+            <governor idx="11">length</governor>
+            <dependent idx="5">called</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="5">called</governor>
+            <dependent idx="6">Darnay</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="7">,</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="8">''</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="11">length</governor>
+            <dependent idx="9">was</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="11">length</governor>
+            <dependent idx="10">at</dependent>
+          </dep>
+          <dep type="acl">
+            <governor idx="11">length</governor>
+            <dependent idx="12">arraigned</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="11">length</governor>
+            <dependent idx="13">.</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+    </sentences>
+  </document>
+</root>

@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root>
+  <document>
+    <sentences>
+      <sentence id="1">
+        <tokens>
+          <token id="1">
+            <word>Sydney</word>
+            <lemma>Sydney</lemma>
+            <CharacterOffsetBegin>0</CharacterOffsetBegin>
+            <CharacterOffsetEnd>6</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>PERSON</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="2">
+            <word>Carton</word>
+            <lemma>Carton</lemma>
+            <CharacterOffsetBegin>7</CharacterOffsetBegin>
+            <CharacterOffsetEnd>13</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>PERSON</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="3">
+            <word>took</word>
+            <lemma>take</lemma>
+            <CharacterOffsetBegin>14</CharacterOffsetBegin>
+            <CharacterOffsetEnd>18</CharacterOffsetEnd>
+            <POS>VBD</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="4">
+            <word>no</word>
+            <lemma>no</lemma>
+            <CharacterOffsetBegin>19</CharacterOffsetBegin>
+            <CharacterOffsetEnd>21</CharacterOffsetEnd>
+            <POS>DT</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="5">
+            <word>heed</word>
+            <lemma>heed</lemma>
+            <CharacterOffsetBegin>22</CharacterOffsetBegin>
+            <CharacterOffsetEnd>26</CharacterOffsetEnd>
+            <POS>VB</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="6">
+            <word>,</word>
+            <lemma>,</lemma>
+            <CharacterOffsetBegin>26</CharacterOffsetBegin>
+            <CharacterOffsetEnd>27</CharacterOffsetEnd>
+            <POS>,</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="7">
+            <word>and</word>
+            <lemma>and</lemma>
+            <CharacterOffsetBegin>28</CharacterOffsetBegin>
+            <CharacterOffsetEnd>31</CharacterOffsetEnd>
+            <POS>CC</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="8">
+            <word>the</word>
+            <lemma>the</lemma>
+            <CharacterOffsetBegin>32</CharacterOffsetBegin>
+            <CharacterOffsetEnd>35</CharacterOffsetEnd>
+            <POS>DT</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="9">
+            <word>chemist</word>
+            <lemma>chemist</lemma>
+            <CharacterOffsetBegin>36</CharacterOffsetBegin>
+            <CharacterOffsetEnd>43</CharacterOffsetEnd>
+            <POS>NN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="10">
+            <word>said</word>
+            <lemma>say</lemma>
+            <CharacterOffsetBegin>44</CharacterOffsetBegin>
+            <CharacterOffsetEnd>48</CharacterOffsetEnd>
+            <POS>VBD</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="11">
+            <word>:</word>
+            <lemma>:</lemma>
+            <CharacterOffsetBegin>48</CharacterOffsetBegin>
+            <CharacterOffsetEnd>49</CharacterOffsetEnd>
+            <POS>:</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+        </tokens>
+        <parse>(ROOT
+          (S
+          (S
+          (NP (NNP Sydney) (NNP Carton))
+          (VP (VBD took)
+          (S
+          (NP (DT no))
+          (VP (VB heed)))))
+          (, ,)
+          (CC and)
+          (S
+          (NP (DT the) (NN chemist))
+          (VP (VBD said)))
+          (: :)))
+          
+          </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">took</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="2">Carton</governor>
+            <dependent idx="1">Sydney</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">took</governor>
+            <dependent idx="2">Carton</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="5">heed</governor>
+            <dependent idx="4">no</dependent>
+          </dep>
+          <dep type="ccomp">
+            <governor idx="3">took</governor>
+            <dependent idx="5">heed</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">took</governor>
+            <dependent idx="6">,</dependent>
+          </dep>
+          <dep type="cc">
+            <governor idx="3">took</governor>
+            <dependent idx="7">and</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="9">chemist</governor>
+            <dependent idx="8">the</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="10">said</governor>
+            <dependent idx="9">chemist</dependent>
+          </dep>
+          <dep type="conj">
+            <governor idx="3">took</governor>
+            <dependent idx="10">said</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">took</governor>
+            <dependent idx="11">:</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">took</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="2">Carton</governor>
+            <dependent idx="1">Sydney</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">took</governor>
+            <dependent idx="2">Carton</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="5">heed</governor>
+            <dependent idx="4">no</dependent>
+          </dep>
+          <dep type="ccomp">
+            <governor idx="3">took</governor>
+            <dependent idx="5">heed</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">took</governor>
+            <dependent idx="6">,</dependent>
+          </dep>
+          <dep type="cc">
+            <governor idx="3">took</governor>
+            <dependent idx="7">and</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="9">chemist</governor>
+            <dependent idx="8">the</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="10">said</governor>
+            <dependent idx="9">chemist</dependent>
+          </dep>
+          <dep type="conj:and">
+            <governor idx="3">took</governor>
+            <dependent idx="10">said</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">took</governor>
+            <dependent idx="11">:</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">took</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="2">Carton</governor>
+            <dependent idx="1">Sydney</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">took</governor>
+            <dependent idx="2">Carton</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="5">heed</governor>
+            <dependent idx="4">no</dependent>
+          </dep>
+          <dep type="ccomp">
+            <governor idx="3">took</governor>
+            <dependent idx="5">heed</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">took</governor>
+            <dependent idx="6">,</dependent>
+          </dep>
+          <dep type="cc">
+            <governor idx="3">took</governor>
+            <dependent idx="7">and</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="9">chemist</governor>
+            <dependent idx="8">the</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="10">said</governor>
+            <dependent idx="9">chemist</dependent>
+          </dep>
+          <dep type="conj:and">
+            <governor idx="3">took</governor>
+            <dependent idx="10">said</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">took</governor>
+            <dependent idx="11">:</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">took</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="2">Carton</governor>
+            <dependent idx="1">Sydney</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">took</governor>
+            <dependent idx="2">Carton</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="5">heed</governor>
+            <dependent idx="4">no</dependent>
+          </dep>
+          <dep type="ccomp">
+            <governor idx="3">took</governor>
+            <dependent idx="5">heed</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">took</governor>
+            <dependent idx="6">,</dependent>
+          </dep>
+          <dep type="cc">
+            <governor idx="3">took</governor>
+            <dependent idx="7">and</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="9">chemist</governor>
+            <dependent idx="8">the</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="10">said</governor>
+            <dependent idx="9">chemist</dependent>
+          </dep>
+          <dep type="conj:and">
+            <governor idx="3">took</governor>
+            <dependent idx="10">said</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">took</governor>
+            <dependent idx="11">:</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-plus-plus-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">took</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="2">Carton</governor>
+            <dependent idx="1">Sydney</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="3">took</governor>
+            <dependent idx="2">Carton</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="5">heed</governor>
+            <dependent idx="4">no</dependent>
+          </dep>
+          <dep type="ccomp">
+            <governor idx="3">took</governor>
+            <dependent idx="5">heed</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">took</governor>
+            <dependent idx="6">,</dependent>
+          </dep>
+          <dep type="cc">
+            <governor idx="3">took</governor>
+            <dependent idx="7">and</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="9">chemist</governor>
+            <dependent idx="8">the</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="10">said</governor>
+            <dependent idx="9">chemist</dependent>
+          </dep>
+          <dep type="conj:and">
+            <governor idx="3">took</governor>
+            <dependent idx="10">said</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">took</governor>
+            <dependent idx="11">:</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+    </sentences>
+  </document>
+</root>

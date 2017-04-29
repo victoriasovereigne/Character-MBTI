@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root>
+  <document>
+    <sentences>
+      <sentence id="1">
+        <tokens>
+          <token id="1">
+            <word>``</word>
+            <lemma>``</lemma>
+            <CharacterOffsetBegin>0</CharacterOffsetBegin>
+            <CharacterOffsetEnd>1</CharacterOffsetEnd>
+            <POS>``</POS>
+            <NER>O</NER>
+          </token>
+          <token id="2">
+            <word>Were</word>
+            <lemma>be</lemma>
+            <CharacterOffsetBegin>1</CharacterOffsetBegin>
+            <CharacterOffsetEnd>5</CharacterOffsetEnd>
+            <POS>VBD</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="3">
+            <word>you</word>
+            <lemma>you</lemma>
+            <CharacterOffsetBegin>6</CharacterOffsetBegin>
+            <CharacterOffsetEnd>9</CharacterOffsetEnd>
+            <POS>PRP</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="4">
+            <word>travelling</word>
+            <lemma>travel</lemma>
+            <CharacterOffsetBegin>10</CharacterOffsetBegin>
+            <CharacterOffsetEnd>20</CharacterOffsetEnd>
+            <POS>VBG</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="5">
+            <word>alone</word>
+            <lemma>alone</lemma>
+            <CharacterOffsetBegin>21</CharacterOffsetBegin>
+            <CharacterOffsetEnd>26</CharacterOffsetEnd>
+            <POS>RB</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="6">
+            <word>,</word>
+            <lemma>,</lemma>
+            <CharacterOffsetBegin>26</CharacterOffsetBegin>
+            <CharacterOffsetEnd>27</CharacterOffsetEnd>
+            <POS>,</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="7">
+            <word>Mr.</word>
+            <lemma>Mr.</lemma>
+            <CharacterOffsetBegin>28</CharacterOffsetBegin>
+            <CharacterOffsetEnd>31</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="8">
+            <word>Lorry</word>
+            <lemma>Lorry</lemma>
+            <CharacterOffsetBegin>32</CharacterOffsetBegin>
+            <CharacterOffsetEnd>37</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>PERSON</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="9">
+            <word>,</word>
+            <lemma>,</lemma>
+            <CharacterOffsetBegin>37</CharacterOffsetBegin>
+            <CharacterOffsetEnd>38</CharacterOffsetEnd>
+            <POS>,</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="10">
+            <word>or</word>
+            <lemma>or</lemma>
+            <CharacterOffsetBegin>39</CharacterOffsetBegin>
+            <CharacterOffsetEnd>41</CharacterOffsetEnd>
+            <POS>CC</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="11">
+            <word>with</word>
+            <lemma>with</lemma>
+            <CharacterOffsetBegin>42</CharacterOffsetBegin>
+            <CharacterOffsetEnd>46</CharacterOffsetEnd>
+            <POS>IN</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="12">
+            <word>any</word>
+            <lemma>any</lemma>
+            <CharacterOffsetBegin>47</CharacterOffsetBegin>
+            <CharacterOffsetEnd>50</CharacterOffsetEnd>
+            <POS>DT</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="13">
+            <word>companion</word>
+            <lemma>companion</lemma>
+            <CharacterOffsetBegin>51</CharacterOffsetBegin>
+            <CharacterOffsetEnd>60</CharacterOffsetEnd>
+            <POS>NN</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="14">
+            <word>?</word>
+            <lemma>?</lemma>
+            <CharacterOffsetBegin>60</CharacterOffsetBegin>
+            <CharacterOffsetEnd>61</CharacterOffsetEnd>
+            <POS>.</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="15">
+            <word>''</word>
+            <lemma>''</lemma>
+            <CharacterOffsetBegin>61</CharacterOffsetBegin>
+            <CharacterOffsetEnd>62</CharacterOffsetEnd>
+            <POS>''</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+        </tokens>
+        <parse>(ROOT
+          (UCP
+          (SBAR (`` ``)
+          (S
+          (VP (VBD Were)
+          (NP
+          (NP (PRP you))
+          (VP (VBG travelling)
+          (ADVP (RB alone))))
+          (, ,))
+          (NP (NNP Mr.) (NNP Lorry))))
+          (, ,)
+          (CC or)
+          (PP (IN with)
+          (NP (DT any) (NN companion))
+          (. ?) ('' ''))))
+          
+          </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">you</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">you</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="3">you</governor>
+            <dependent idx="2">Were</dependent>
+          </dep>
+          <dep type="acl">
+            <governor idx="3">you</governor>
+            <dependent idx="4">travelling</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="4">travelling</governor>
+            <dependent idx="5">alone</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">you</governor>
+            <dependent idx="6">,</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="8">Lorry</governor>
+            <dependent idx="7">Mr.</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="3">you</governor>
+            <dependent idx="8">Lorry</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">you</governor>
+            <dependent idx="9">,</dependent>
+          </dep>
+          <dep type="cc">
+            <governor idx="3">you</governor>
+            <dependent idx="10">or</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="13">companion</governor>
+            <dependent idx="11">with</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="13">companion</governor>
+            <dependent idx="12">any</dependent>
+          </dep>
+          <dep type="conj">
+            <governor idx="3">you</governor>
+            <dependent idx="13">companion</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="13">companion</governor>
+            <dependent idx="14">?</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="13">companion</governor>
+            <dependent idx="15">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">you</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">you</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="3">you</governor>
+            <dependent idx="2">Were</dependent>
+          </dep>
+          <dep type="acl">
+            <governor idx="3">you</governor>
+            <dependent idx="4">travelling</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="4">travelling</governor>
+            <dependent idx="5">alone</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">you</governor>
+            <dependent idx="6">,</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="8">Lorry</governor>
+            <dependent idx="7">Mr.</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="3">you</governor>
+            <dependent idx="8">Lorry</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">you</governor>
+            <dependent idx="9">,</dependent>
+          </dep>
+          <dep type="cc">
+            <governor idx="3">you</governor>
+            <dependent idx="10">or</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="13">companion</governor>
+            <dependent idx="11">with</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="13">companion</governor>
+            <dependent idx="12">any</dependent>
+          </dep>
+          <dep type="conj:or">
+            <governor idx="3">you</governor>
+            <dependent idx="13">companion</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="13">companion</governor>
+            <dependent idx="14">?</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="13">companion</governor>
+            <dependent idx="15">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">you</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">you</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="3">you</governor>
+            <dependent idx="2">Were</dependent>
+          </dep>
+          <dep type="acl">
+            <governor idx="3">you</governor>
+            <dependent idx="4">travelling</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="4">travelling</governor>
+            <dependent idx="5">alone</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">you</governor>
+            <dependent idx="6">,</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="8">Lorry</governor>
+            <dependent idx="7">Mr.</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="3">you</governor>
+            <dependent idx="8">Lorry</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">you</governor>
+            <dependent idx="9">,</dependent>
+          </dep>
+          <dep type="cc">
+            <governor idx="3">you</governor>
+            <dependent idx="10">or</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="13">companion</governor>
+            <dependent idx="11">with</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="13">companion</governor>
+            <dependent idx="12">any</dependent>
+          </dep>
+          <dep type="conj:or">
+            <governor idx="3">you</governor>
+            <dependent idx="13">companion</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="13">companion</governor>
+            <dependent idx="14">?</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="13">companion</governor>
+            <dependent idx="15">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">you</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">you</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="3">you</governor>
+            <dependent idx="2">Were</dependent>
+          </dep>
+          <dep type="acl">
+            <governor idx="3">you</governor>
+            <dependent idx="4">travelling</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="4">travelling</governor>
+            <dependent idx="5">alone</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">you</governor>
+            <dependent idx="6">,</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="8">Lorry</governor>
+            <dependent idx="7">Mr.</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="3">you</governor>
+            <dependent idx="8">Lorry</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">you</governor>
+            <dependent idx="9">,</dependent>
+          </dep>
+          <dep type="cc">
+            <governor idx="3">you</governor>
+            <dependent idx="10">or</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="13">companion</governor>
+            <dependent idx="11">with</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="13">companion</governor>
+            <dependent idx="12">any</dependent>
+          </dep>
+          <dep type="conj:or">
+            <governor idx="3">you</governor>
+            <dependent idx="13">companion</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="13">companion</governor>
+            <dependent idx="14">?</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="13">companion</governor>
+            <dependent idx="15">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-plus-plus-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="3">you</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">you</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="3">you</governor>
+            <dependent idx="2">Were</dependent>
+          </dep>
+          <dep type="acl">
+            <governor idx="3">you</governor>
+            <dependent idx="4">travelling</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="4">travelling</governor>
+            <dependent idx="5">alone</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">you</governor>
+            <dependent idx="6">,</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="8">Lorry</governor>
+            <dependent idx="7">Mr.</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="3">you</governor>
+            <dependent idx="8">Lorry</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="3">you</governor>
+            <dependent idx="9">,</dependent>
+          </dep>
+          <dep type="cc">
+            <governor idx="3">you</governor>
+            <dependent idx="10">or</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="13">companion</governor>
+            <dependent idx="11">with</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="13">companion</governor>
+            <dependent idx="12">any</dependent>
+          </dep>
+          <dep type="conj:or">
+            <governor idx="3">you</governor>
+            <dependent idx="13">companion</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="13">companion</governor>
+            <dependent idx="14">?</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="13">companion</governor>
+            <dependent idx="15">''</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+    </sentences>
+  </document>
+</root>

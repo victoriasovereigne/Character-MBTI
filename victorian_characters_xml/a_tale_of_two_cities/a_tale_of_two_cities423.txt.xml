@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root>
+  <document>
+    <sentences>
+      <sentence id="1">
+        <tokens>
+          <token id="1">
+            <word>``</word>
+            <lemma>``</lemma>
+            <CharacterOffsetBegin>0</CharacterOffsetBegin>
+            <CharacterOffsetEnd>1</CharacterOffsetEnd>
+            <POS>``</POS>
+            <NER>O</NER>
+          </token>
+          <token id="2">
+            <word>How</word>
+            <lemma>how</lemma>
+            <CharacterOffsetBegin>1</CharacterOffsetBegin>
+            <CharacterOffsetEnd>4</CharacterOffsetEnd>
+            <POS>WRB</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="3">
+            <word>I</word>
+            <lemma>I</lemma>
+            <CharacterOffsetBegin>5</CharacterOffsetBegin>
+            <CharacterOffsetEnd>6</CharacterOffsetEnd>
+            <POS>PRP</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="4">
+            <word>admire</word>
+            <lemma>admire</lemma>
+            <CharacterOffsetBegin>7</CharacterOffsetBegin>
+            <CharacterOffsetEnd>13</CharacterOffsetEnd>
+            <POS>VBP</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="5">
+            <word>the</word>
+            <lemma>the</lemma>
+            <CharacterOffsetBegin>14</CharacterOffsetBegin>
+            <CharacterOffsetEnd>17</CharacterOffsetEnd>
+            <POS>DT</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="6">
+            <word>gallantry</word>
+            <lemma>gallantry</lemma>
+            <CharacterOffsetBegin>18</CharacterOffsetBegin>
+            <CharacterOffsetEnd>27</CharacterOffsetEnd>
+            <POS>NN</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="7">
+            <word>of</word>
+            <lemma>of</lemma>
+            <CharacterOffsetBegin>28</CharacterOffsetBegin>
+            <CharacterOffsetEnd>30</CharacterOffsetEnd>
+            <POS>IN</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="8">
+            <word>your</word>
+            <lemma>you</lemma>
+            <CharacterOffsetBegin>31</CharacterOffsetBegin>
+            <CharacterOffsetEnd>35</CharacterOffsetEnd>
+            <POS>PRP$</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="9">
+            <word>youthful</word>
+            <lemma>youthful</lemma>
+            <CharacterOffsetBegin>36</CharacterOffsetBegin>
+            <CharacterOffsetEnd>44</CharacterOffsetEnd>
+            <POS>JJ</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="10">
+            <word>spirit</word>
+            <lemma>spirit</lemma>
+            <CharacterOffsetBegin>45</CharacterOffsetBegin>
+            <CharacterOffsetEnd>51</CharacterOffsetEnd>
+            <POS>NN</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="11">
+            <word>,</word>
+            <lemma>,</lemma>
+            <CharacterOffsetBegin>51</CharacterOffsetBegin>
+            <CharacterOffsetEnd>52</CharacterOffsetEnd>
+            <POS>,</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="12">
+            <word>Mr.</word>
+            <lemma>Mr.</lemma>
+            <CharacterOffsetBegin>53</CharacterOffsetBegin>
+            <CharacterOffsetEnd>56</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="13">
+            <word>Lorry</word>
+            <lemma>Lorry</lemma>
+            <CharacterOffsetBegin>57</CharacterOffsetBegin>
+            <CharacterOffsetEnd>62</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="14">
+            <word>.</word>
+            <lemma>.</lemma>
+            <CharacterOffsetBegin>62</CharacterOffsetBegin>
+            <CharacterOffsetEnd>63</CharacterOffsetEnd>
+            <POS>.</POS>
+            <NER>O</NER>
+            <Speaker>PER1</Speaker>
+          </token>
+          <token id="15">
+            <word>''</word>
+            <lemma>''</lemma>
+            <CharacterOffsetBegin>63</CharacterOffsetBegin>
+            <CharacterOffsetEnd>64</CharacterOffsetEnd>
+            <POS>''</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+        </tokens>
+        <parse>(ROOT
+          (SBARQ (`` ``)
+          (WHADVP (WRB How))
+          (SQ
+          (NP (PRP I))
+          (VP (VBP admire)
+          (NP
+          (NP (DT the) (NN gallantry))
+          (PP (IN of)
+          (NP
+          (NP (PRP$ your) (JJ youthful) (NN spirit))
+          (, ,)
+          (NP (NNP Mr.) (NNP Lorry)))))))
+          (. .) ('' '')))
+          
+          </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="4">admire</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">admire</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="4">admire</governor>
+            <dependent idx="2">How</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="4">admire</governor>
+            <dependent idx="3">I</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="6">gallantry</governor>
+            <dependent idx="5">the</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="4">admire</governor>
+            <dependent idx="6">gallantry</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="10">spirit</governor>
+            <dependent idx="7">of</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="10">spirit</governor>
+            <dependent idx="8">your</dependent>
+          </dep>
+          <dep type="amod">
+            <governor idx="10">spirit</governor>
+            <dependent idx="9">youthful</dependent>
+          </dep>
+          <dep type="nmod">
+            <governor idx="6">gallantry</governor>
+            <dependent idx="10">spirit</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="10">spirit</governor>
+            <dependent idx="11">,</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="13">Lorry</governor>
+            <dependent idx="12">Mr.</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="10">spirit</governor>
+            <dependent idx="13">Lorry</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">admire</governor>
+            <dependent idx="14">.</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">admire</governor>
+            <dependent idx="15">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="4">admire</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">admire</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="4">admire</governor>
+            <dependent idx="2">How</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="4">admire</governor>
+            <dependent idx="3">I</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="6">gallantry</governor>
+            <dependent idx="5">the</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="4">admire</governor>
+            <dependent idx="6">gallantry</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="10">spirit</governor>
+            <dependent idx="7">of</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="10">spirit</governor>
+            <dependent idx="8">your</dependent>
+          </dep>
+          <dep type="amod">
+            <governor idx="10">spirit</governor>
+            <dependent idx="9">youthful</dependent>
+          </dep>
+          <dep type="nmod:of">
+            <governor idx="6">gallantry</governor>
+            <dependent idx="10">spirit</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="10">spirit</governor>
+            <dependent idx="11">,</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="13">Lorry</governor>
+            <dependent idx="12">Mr.</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="10">spirit</governor>
+            <dependent idx="13">Lorry</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">admire</governor>
+            <dependent idx="14">.</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">admire</governor>
+            <dependent idx="15">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="4">admire</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">admire</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="4">admire</governor>
+            <dependent idx="2">How</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="4">admire</governor>
+            <dependent idx="3">I</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="6">gallantry</governor>
+            <dependent idx="5">the</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="4">admire</governor>
+            <dependent idx="6">gallantry</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="10">spirit</governor>
+            <dependent idx="7">of</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="10">spirit</governor>
+            <dependent idx="8">your</dependent>
+          </dep>
+          <dep type="amod">
+            <governor idx="10">spirit</governor>
+            <dependent idx="9">youthful</dependent>
+          </dep>
+          <dep type="nmod:of">
+            <governor idx="6">gallantry</governor>
+            <dependent idx="10">spirit</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="10">spirit</governor>
+            <dependent idx="11">,</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="13">Lorry</governor>
+            <dependent idx="12">Mr.</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="10">spirit</governor>
+            <dependent idx="13">Lorry</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">admire</governor>
+            <dependent idx="14">.</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">admire</governor>
+            <dependent idx="15">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="4">admire</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">admire</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="4">admire</governor>
+            <dependent idx="2">How</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="4">admire</governor>
+            <dependent idx="3">I</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="6">gallantry</governor>
+            <dependent idx="5">the</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="4">admire</governor>
+            <dependent idx="6">gallantry</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="10">spirit</governor>
+            <dependent idx="7">of</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="10">spirit</governor>
+            <dependent idx="8">your</dependent>
+          </dep>
+          <dep type="amod">
+            <governor idx="10">spirit</governor>
+            <dependent idx="9">youthful</dependent>
+          </dep>
+          <dep type="nmod:of">
+            <governor idx="6">gallantry</governor>
+            <dependent idx="10">spirit</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="10">spirit</governor>
+            <dependent idx="11">,</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="13">Lorry</governor>
+            <dependent idx="12">Mr.</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="10">spirit</governor>
+            <dependent idx="13">Lorry</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">admire</governor>
+            <dependent idx="14">.</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">admire</governor>
+            <dependent idx="15">''</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-plus-plus-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="4">admire</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">admire</governor>
+            <dependent idx="1">``</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="4">admire</governor>
+            <dependent idx="2">How</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="4">admire</governor>
+            <dependent idx="3">I</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="6">gallantry</governor>
+            <dependent idx="5">the</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="4">admire</governor>
+            <dependent idx="6">gallantry</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="10">spirit</governor>
+            <dependent idx="7">of</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="10">spirit</governor>
+            <dependent idx="8">your</dependent>
+          </dep>
+          <dep type="amod">
+            <governor idx="10">spirit</governor>
+            <dependent idx="9">youthful</dependent>
+          </dep>
+          <dep type="nmod:of">
+            <governor idx="6">gallantry</governor>
+            <dependent idx="10">spirit</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="10">spirit</governor>
+            <dependent idx="11">,</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="13">Lorry</governor>
+            <dependent idx="12">Mr.</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="10">spirit</governor>
+            <dependent idx="13">Lorry</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">admire</governor>
+            <dependent idx="14">.</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="4">admire</governor>
+            <dependent idx="15">''</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+    </sentences>
+    <coreference>
+      <coreference>
+        <mention representative="true">
+          <sentence>1</sentence>
+          <start>12</start>
+          <end>14</end>
+          <head>13</head>
+          <text>Mr. Lorry</text>
+        </mention>
+        <mention>
+          <sentence>1</sentence>
+          <start>8</start>
+          <end>11</end>
+          <head>10</head>
+          <text>your youthful spirit</text>
+        </mention>
+      </coreference>
+    </coreference>
+  </document>
+</root>

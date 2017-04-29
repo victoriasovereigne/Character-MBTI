@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root>
+  <document>
+    <sentences>
+      <sentence id="1">
+        <tokens>
+          <token id="1">
+            <word>He</word>
+            <lemma>he</lemma>
+            <CharacterOffsetBegin>0</CharacterOffsetBegin>
+            <CharacterOffsetEnd>2</CharacterOffsetEnd>
+            <POS>PRP</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="2">
+            <word>looked</word>
+            <lemma>look</lemma>
+            <CharacterOffsetBegin>3</CharacterOffsetBegin>
+            <CharacterOffsetEnd>9</CharacterOffsetEnd>
+            <POS>VBD</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="3">
+            <word>like</word>
+            <lemma>like</lemma>
+            <CharacterOffsetBegin>10</CharacterOffsetBegin>
+            <CharacterOffsetEnd>14</CharacterOffsetEnd>
+            <POS>IN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="4">
+            <word>his</word>
+            <lemma>he</lemma>
+            <CharacterOffsetBegin>15</CharacterOffsetBegin>
+            <CharacterOffsetEnd>18</CharacterOffsetEnd>
+            <POS>PRP$</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="5">
+            <word>illustration</word>
+            <lemma>illustration</lemma>
+            <CharacterOffsetBegin>19</CharacterOffsetBegin>
+            <CharacterOffsetEnd>31</CharacterOffsetEnd>
+            <POS>NN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="6">
+            <word>,</word>
+            <lemma>,</lemma>
+            <CharacterOffsetBegin>31</CharacterOffsetBegin>
+            <CharacterOffsetEnd>32</CharacterOffsetEnd>
+            <POS>,</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="7">
+            <word>as</word>
+            <lemma>as</lemma>
+            <CharacterOffsetBegin>33</CharacterOffsetBegin>
+            <CharacterOffsetEnd>35</CharacterOffsetEnd>
+            <POS>IN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="8">
+            <word>he</word>
+            <lemma>he</lemma>
+            <CharacterOffsetBegin>36</CharacterOffsetBegin>
+            <CharacterOffsetEnd>38</CharacterOffsetEnd>
+            <POS>PRP</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="9">
+            <word>raised</word>
+            <lemma>raise</lemma>
+            <CharacterOffsetBegin>39</CharacterOffsetBegin>
+            <CharacterOffsetEnd>45</CharacterOffsetEnd>
+            <POS>VBD</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="10">
+            <word>his</word>
+            <lemma>he</lemma>
+            <CharacterOffsetBegin>46</CharacterOffsetBegin>
+            <CharacterOffsetEnd>49</CharacterOffsetEnd>
+            <POS>PRP$</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="11">
+            <word>eyes</word>
+            <lemma>eye</lemma>
+            <CharacterOffsetBegin>50</CharacterOffsetBegin>
+            <CharacterOffsetEnd>54</CharacterOffsetEnd>
+            <POS>NNS</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="12">
+            <word>to</word>
+            <lemma>to</lemma>
+            <CharacterOffsetBegin>55</CharacterOffsetBegin>
+            <CharacterOffsetEnd>57</CharacterOffsetEnd>
+            <POS>TO</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="13">
+            <word>Mr.</word>
+            <lemma>Mr.</lemma>
+            <CharacterOffsetBegin>58</CharacterOffsetBegin>
+            <CharacterOffsetEnd>61</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="14">
+            <word>Lorry</word>
+            <lemma>Lorry</lemma>
+            <CharacterOffsetBegin>62</CharacterOffsetBegin>
+            <CharacterOffsetEnd>67</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>PERSON</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="15">
+            <word>'s</word>
+            <lemma>'s</lemma>
+            <CharacterOffsetBegin>67</CharacterOffsetBegin>
+            <CharacterOffsetEnd>69</CharacterOffsetEnd>
+            <POS>POS</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="16">
+            <word>face</word>
+            <lemma>face</lemma>
+            <CharacterOffsetBegin>70</CharacterOffsetBegin>
+            <CharacterOffsetEnd>74</CharacterOffsetEnd>
+            <POS>NN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+          <token id="17">
+            <word>.</word>
+            <lemma>.</lemma>
+            <CharacterOffsetBegin>74</CharacterOffsetBegin>
+            <CharacterOffsetEnd>75</CharacterOffsetEnd>
+            <POS>.</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+          </token>
+        </tokens>
+        <parse>(ROOT
+          (S
+          (NP (PRP He))
+          (VP (VBD looked)
+          (PP (IN like)
+          (NP (PRP$ his) (NN illustration)))
+          (, ,)
+          (SBAR (IN as)
+          (S
+          (NP (PRP he))
+          (VP (VBD raised)
+          (NP (PRP$ his) (NNS eyes))
+          (PP (TO to)
+          (NP
+          (NP (NNP Mr.) (NNP Lorry) (POS 's))
+          (NN face)))))))
+          (. .)))
+          
+          </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="2">looked</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="2">looked</governor>
+            <dependent idx="1">He</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="5">illustration</governor>
+            <dependent idx="3">like</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="5">illustration</governor>
+            <dependent idx="4">his</dependent>
+          </dep>
+          <dep type="nmod">
+            <governor idx="2">looked</governor>
+            <dependent idx="5">illustration</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">looked</governor>
+            <dependent idx="6">,</dependent>
+          </dep>
+          <dep type="mark">
+            <governor idx="9">raised</governor>
+            <dependent idx="7">as</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="9">raised</governor>
+            <dependent idx="8">he</dependent>
+          </dep>
+          <dep type="advcl">
+            <governor idx="2">looked</governor>
+            <dependent idx="9">raised</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="11">eyes</governor>
+            <dependent idx="10">his</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="9">raised</governor>
+            <dependent idx="11">eyes</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="16">face</governor>
+            <dependent idx="12">to</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="14">Lorry</governor>
+            <dependent idx="13">Mr.</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="16">face</governor>
+            <dependent idx="14">Lorry</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="14">Lorry</governor>
+            <dependent idx="15">'s</dependent>
+          </dep>
+          <dep type="nmod">
+            <governor idx="9">raised</governor>
+            <dependent idx="16">face</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">looked</governor>
+            <dependent idx="17">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="2">looked</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="2">looked</governor>
+            <dependent idx="1">He</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="5">illustration</governor>
+            <dependent idx="3">like</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="5">illustration</governor>
+            <dependent idx="4">his</dependent>
+          </dep>
+          <dep type="nmod:like">
+            <governor idx="2">looked</governor>
+            <dependent idx="5">illustration</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">looked</governor>
+            <dependent idx="6">,</dependent>
+          </dep>
+          <dep type="mark">
+            <governor idx="9">raised</governor>
+            <dependent idx="7">as</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="9">raised</governor>
+            <dependent idx="8">he</dependent>
+          </dep>
+          <dep type="advcl">
+            <governor idx="2">looked</governor>
+            <dependent idx="9">raised</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="11">eyes</governor>
+            <dependent idx="10">his</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="9">raised</governor>
+            <dependent idx="11">eyes</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="16">face</governor>
+            <dependent idx="12">to</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="14">Lorry</governor>
+            <dependent idx="13">Mr.</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="16">face</governor>
+            <dependent idx="14">Lorry</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="14">Lorry</governor>
+            <dependent idx="15">'s</dependent>
+          </dep>
+          <dep type="nmod:to">
+            <governor idx="9">raised</governor>
+            <dependent idx="16">face</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">looked</governor>
+            <dependent idx="17">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="2">looked</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="2">looked</governor>
+            <dependent idx="1">He</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="5">illustration</governor>
+            <dependent idx="3">like</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="5">illustration</governor>
+            <dependent idx="4">his</dependent>
+          </dep>
+          <dep type="nmod:like">
+            <governor idx="2">looked</governor>
+            <dependent idx="5">illustration</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">looked</governor>
+            <dependent idx="6">,</dependent>
+          </dep>
+          <dep type="mark">
+            <governor idx="9">raised</governor>
+            <dependent idx="7">as</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="9">raised</governor>
+            <dependent idx="8">he</dependent>
+          </dep>
+          <dep type="advcl">
+            <governor idx="2">looked</governor>
+            <dependent idx="9">raised</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="11">eyes</governor>
+            <dependent idx="10">his</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="9">raised</governor>
+            <dependent idx="11">eyes</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="16">face</governor>
+            <dependent idx="12">to</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="14">Lorry</governor>
+            <dependent idx="13">Mr.</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="16">face</governor>
+            <dependent idx="14">Lorry</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="14">Lorry</governor>
+            <dependent idx="15">'s</dependent>
+          </dep>
+          <dep type="nmod:to">
+            <governor idx="9">raised</governor>
+            <dependent idx="16">face</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">looked</governor>
+            <dependent idx="17">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="2">looked</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="2">looked</governor>
+            <dependent idx="1">He</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="5">illustration</governor>
+            <dependent idx="3">like</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="5">illustration</governor>
+            <dependent idx="4">his</dependent>
+          </dep>
+          <dep type="nmod:like">
+            <governor idx="2">looked</governor>
+            <dependent idx="5">illustration</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">looked</governor>
+            <dependent idx="6">,</dependent>
+          </dep>
+          <dep type="mark">
+            <governor idx="9">raised</governor>
+            <dependent idx="7">as</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="9">raised</governor>
+            <dependent idx="8">he</dependent>
+          </dep>
+          <dep type="advcl:as">
+            <governor idx="2">looked</governor>
+            <dependent idx="9">raised</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="11">eyes</governor>
+            <dependent idx="10">his</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="9">raised</governor>
+            <dependent idx="11">eyes</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="16">face</governor>
+            <dependent idx="12">to</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="14">Lorry</governor>
+            <dependent idx="13">Mr.</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="16">face</governor>
+            <dependent idx="14">Lorry</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="14">Lorry</governor>
+            <dependent idx="15">'s</dependent>
+          </dep>
+          <dep type="nmod:to">
+            <governor idx="9">raised</governor>
+            <dependent idx="16">face</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">looked</governor>
+            <dependent idx="17">.</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="enhanced-plus-plus-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="2">looked</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="2">looked</governor>
+            <dependent idx="1">He</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="5">illustration</governor>
+            <dependent idx="3">like</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="5">illustration</governor>
+            <dependent idx="4">his</dependent>
+          </dep>
+          <dep type="nmod:like">
+            <governor idx="2">looked</governor>
+            <dependent idx="5">illustration</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">looked</governor>
+            <dependent idx="6">,</dependent>
+          </dep>
+          <dep type="mark">
+            <governor idx="9">raised</governor>
+            <dependent idx="7">as</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="9">raised</governor>
+            <dependent idx="8">he</dependent>
+          </dep>
+          <dep type="advcl:as">
+            <governor idx="2">looked</governor>
+            <dependent idx="9">raised</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="11">eyes</governor>
+            <dependent idx="10">his</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="9">raised</governor>
+            <dependent idx="11">eyes</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="16">face</governor>
+            <dependent idx="12">to</dependent>
+          </dep>
+          <dep type="compound">
+            <governor idx="14">Lorry</governor>
+            <dependent idx="13">Mr.</dependent>
+          </dep>
+          <dep type="nmod:poss">
+            <governor idx="16">face</governor>
+            <dependent idx="14">Lorry</dependent>
+          </dep>
+          <dep type="case">
+            <governor idx="14">Lorry</governor>
+            <dependent idx="15">'s</dependent>
+          </dep>
+          <dep type="nmod:to">
+            <governor idx="9">raised</governor>
+            <dependent idx="16">face</dependent>
+          </dep>
+          <dep type="punct">
+            <governor idx="2">looked</governor>
+            <dependent idx="17">.</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+    </sentences>
+    <coreference>
+      <coreference>
+        <mention representative="true">
+          <sentence>1</sentence>
+          <start>1</start>
+          <end>2</end>
+          <head>1</head>
+          <text>He</text>
+        </mention>
+        <mention>
+          <sentence>1</sentence>
+          <start>4</start>
+          <end>5</end>
+          <head>4</head>
+          <text>his</text>
+        </mention>
+        <mention>
+          <sentence>1</sentence>
+          <start>8</start>
+          <end>9</end>
+          <head>8</head>
+          <text>he</text>
+        </mention>
+        <mention>
+          <sentence>1</sentence>
+          <start>10</start>
+          <end>11</end>
+          <head>10</head>
+          <text>his</text>
+        </mention>
+      </coreference>
+    </coreference>
+  </document>
+</root>
