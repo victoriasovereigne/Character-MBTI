@@ -5,10 +5,23 @@ from pprint import pprint
 import sys
 
 class Character:
-	def __init__(self, name, possible_names):
+	def __init__(self, name, possible_names=None):
 		self.name = name
 		self.persona = {'agent':[], 'patient':[], 'poss':[], 'mod':[]}
 		self.possible_names = possible_names
+		self.vector = {}
+
+		self.E = 0 # extroversion
+		self.A = 0 # agreeableness
+		self.C = 0 # conscientiousness
+		self.O = 0 # openness
+		self.S = 0 # stability
+
+		self.zE = 0 # extroversion
+		self.zA = 0 # agreeableness
+		self.zC = 0 # conscientiousness
+		self.zO = 0 # openness
+		self.zS = 0 # stability
 
 	def isEmpty(self):
 		return len(self.persona['agent']) == 0 and len(self.persona['patient']) == 0 and len(self.persona['poss']) == 0 and len(self.persona['mod']) == 0
@@ -149,8 +162,8 @@ class Book:
 			persona[key] = self.character_list[key].persona
 		return persona
 
-	# create dependencies out of xml files
-	def create_dependencies(self, xml_folder):
+	# create persona out of xml files
+	def create_persona(self, xml_folder):
 		xml_files = os.listdir(xml_folder) # get the XML files from the folder
 		reverse_names = self.reverse_possible_names() # get possible names
 
@@ -272,8 +285,31 @@ def main():
 		book_id = data[2]
 		book_json = data[3]
 		other_names = data[4].split('/')
+		_ae = data[9]
+		_aa = data[10]
+		_ac = data[11]
+		_as = data[12]
+		_ao = data[13]
+
+		z_ae = data[14]
+		z_aa = data[15]
+		z_ac = data[16]
+		z_as = data[17]
+		z_ao = data[18]
+
 
 		c = Character(character_name, other_names)
+		c.E = _ae
+		c.A = _aa
+		c.C = _ac
+		c.S = _as
+		c.O = _ao
+
+		c.zE = z_ae
+		c.zA = z_aa
+		c.zC = z_ac
+		c.zS = z_as
+		c.zO = z_ao
 
 		# get book title and its associated list of characters
 		if book_title in book_dictionary.keys():
@@ -290,13 +326,26 @@ def main():
 		book = book_dictionary[key]
 		folder = xml_folder + '/' + book.book_file[:-5]
 		try:
-			book.create_dependencies(folder)
+			book.create_persona(folder)
 
 			for character in book.character_list.keys():
-				if book.character_list[character].isEmpty():
+				cObj = book.character_list[character]
+				if cObj.isEmpty():
 					error_file.write(character)
 				else:
-					persona = book.character_list[character].persona
+					persona = cObj.persona
+					persona['extroversion'] = cObj.E
+					persona['agreeableness'] = cObj.A
+					persona['conscientiousness'] = cObj.C
+					persona['stability'] = cObj.S
+					persona['openness'] = cObj.O
+
+					persona['z_extroversion'] = cObj.zE
+					persona['z_agreeableness'] = cObj.zA
+					persona['z_conscientiousness'] = cObj.zC
+					persona['z_stability'] = cObj.zS
+					persona['z_openness'] = cObj.zO
+
 					outfile = open(character + '.json', 'w')
 					json.dump(persona, outfile)
 					outfile.close()
