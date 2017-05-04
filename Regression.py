@@ -11,105 +11,7 @@ import random
 from gensim import models
 
 from Character import *
-
-class CorpusDictionary:
-	def __init__(self, json_folder, lemmatized=True, dictExists=False):
-		self.json_folder = json_folder
-		self.corpora = {'agent':None, 'patient':None, 'mod':None, 'poss':None, 'all':None}
-		self.character_list = {}
-
-		json_files = os.listdir(json_folder)
-		lmt = WordNetLemmatizer()
-
-		agent = []
-		patient = []
-		mod = []
-		poss = []
-
-		for afile in json_files:
-			name = afile[:-5]
-			c = Character(name)
-			afile = json_folder + '/' + afile
-
-			try:
-				f = open(afile, 'r')
-				data = json.load(f)
-				c.E = float(data['extroversion'])
-				c.A = float(data['agreeableness'])
-				c.C = float(data['conscientiousness'])
-				c.S = float(data['stability'])
-				c.O = float(data['openness'])
-
-				c.zE = float(data['z_extroversion'])
-				c.zA = float(data['z_agreeableness'])
-				c.zC = float(data['z_conscientiousness'])
-				c.zS = float(data['z_stability'])
-				c.zO = float(data['z_openness'])
-
-				for word in data['agent']:
-					word = word.lower()
-					if lemmatized:
-						word = lmt.lemmatize(word, 'v')
-					c.persona['agent'].append(word)
-
-				for word in data['patient']:
-					word = word.lower()
-					if lemmatized:
-						word = lmt.lemmatize(word, 'v')
-					c.persona['patient'].append(word)
-
-				for word in data['mod']:
-					word = word.lower()
-					if lemmatized:
-						word = lmt.lemmatize(word, 'v')
-					c.persona['mod'].append(word)
-
-				for word in data['poss']:
-					word = word.lower()
-					if lemmatized:
-						word = lmt.lemmatize(word, 'v')
-					c.persona['poss'].append(word)
-
-				agent.append(c.persona['agent'])
-				patient.append(c.persona['patient'])
-				mod.append(c.persona['mod'])
-				poss.append(c.persona['agent'])
-
-				self.character_list[name] = c
-
-			except Exception as e:
-				print(afile, e)
-
-		self.corpora['agent'] = Dictionary(agent)
-		self.corpora['patient'] = Dictionary(patient)
-		self.corpora['mod'] = Dictionary(mod)
-		self.corpora['poss'] = Dictionary(poss)
-		self.corpora['all'] = Dictionary(agent+patient+mod+poss)
-
-	def convert_character_to_vector(self):
-		for character in self.character_list.keys():
-			# print(character)
-			char = self.character_list[character]
-			all = []
-
-			for type in ['agent', 'patient', 'mod', 'poss']:
-				persona = char.persona[type]
-				all.extend(persona)
-
-				char.vector[type] = self.corpora[type].doc2bow(persona)
-				
-				# print(type)
-				# print(self.character_list[character].vector[type])
-
-			char.vector['all'] = self.corpora['all'].doc2bow(all)
-
-	def save(self):
-		self.corpora['agent'].save('agent.dict')
-		self.corpora['patient'].save('patient.dict')
-		self.corpora['poss'].save('poss.dict')
-		self.corpora['mod'].save('mod.dict')
-		self.corpora['all'].save('all.dict')
-
+from CorpusDictionary import *
 
 class Regression:
 	def __init__(self, corpus_dict, train=0.8, validation=0.1):
@@ -170,8 +72,8 @@ class Regression:
 		self.svr = SVR(C=1.0, epsilon=0.2)
 		self.svr.fit(self.X_train_agent, self.y_train_E)
 		newY = self.svr.predict(self.X_test_agent)
-		print(newY)
-		print(self.y_test_E)
+		# print(newY)
+		# print(self.y_test_E)
 
 		print(mean_squared_error(self.y_test_E, newY))
 

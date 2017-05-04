@@ -3,6 +3,7 @@ import os
 import json
 from pprint import pprint
 import sys
+from nltk.stem.wordnet import WordNetLemmatizer
 
 class Character:
 	def __init__(self, name, possible_names=None):
@@ -22,6 +23,11 @@ class Character:
 		self.zC = 0 # conscientiousness
 		self.zO = 0 # openness
 		self.zS = 0 # stability
+
+		# meta 
+		self.gender = 0
+		self.valence = 0 # good or evil
+		self.salience = 0 # major or minor character
 
 	def isEmpty(self):
 		return len(self.persona['agent']) == 0 and len(self.persona['patient']) == 0 and len(self.persona['poss']) == 0 and len(self.persona['mod']) == 0
@@ -166,6 +172,7 @@ class Book:
 	def create_persona(self, xml_folder):
 		xml_files = os.listdir(xml_folder) # get the XML files from the folder
 		reverse_names = self.reverse_possible_names() # get possible names
+		lmt = WordNetLemmatizer()
 
 		for afile in xml_files:
 			afile = xml_folder + '/' + afile
@@ -203,12 +210,18 @@ class Book:
 									character = corefs[(dep_id, s_id)]
 
 									if character in reverse_names.keys():
-										pos = postag[(governor, s_id, gov_id)]
+										pos = postag.get((governor, s_id, gov_id), '0')
+										lemma = ''
+
+										if pos[0] == 'V':
+											lemma = lmt.lemmatize(governor, 'v')
+										else:
+											lemma = lmt.lemmatize(governor)
 
 										if pos == 'JJ' or 'NN' in pos:
-											self.get_character(reverse_names[character]).persona['mod'].append(governor)
+											self.get_character(reverse_names[character]).persona['mod'].append((governor, lemma))
 										else:
-											self.get_character(reverse_names[character]).persona['agent'].append(governor)
+											self.get_character(reverse_names[character]).persona['agent'].append((governor, lemma))
 
 							elif dp.attrib['type'] == 'dobj':
 								governor = dp.find('governor').text
@@ -219,7 +232,10 @@ class Book:
 									character = corefs[(dep_id, s_id)]
 
 									if character in reverse_names.keys():
-										self.get_character(reverse_names[character]).persona['patient'].append(governor)
+										pos = postag.get((governor, s_id, gov_id), '0')
+										lemma = lmt.lemmatize(governor, 'v')
+
+										self.get_character(reverse_names[character]).persona['patient'].append((governor, lemma))
 
 							elif dp.attrib['type'] == 'nmod:poss':
 								governor = dp.find('governor').text
@@ -230,7 +246,10 @@ class Book:
 									character = corefs[(dep_id, s_id)]
 
 									if character in reverse_names.keys():
-										self.get_character(reverse_names[character]).persona['poss'].append(governor)
+										pos = postag.get((governor, s_id, gov_id), '0')
+										lemma = lmt.lemmatize(governor)
+
+										self.get_character(reverse_names[character]).persona['poss'].append((governor, lemma))
 
 
 
@@ -279,12 +298,18 @@ def main():
 	book_dictionary = {}
 
 	for line in lines[1:]:
+		line = line.strip('\n')
 		data = line.split(',')
 		character_name = data[0]
 		book_title = data[1]
 		book_id = data[2]
 		book_json = data[3]
 		other_names = data[4].split('/')
+
+		gender = data[5]
+		valence = data[6]
+		salience = data[7]
+
 		_ae = data[9]
 		_aa = data[10]
 		_ac = data[11]
@@ -311,6 +336,10 @@ def main():
 		c.zS = z_as
 		c.zO = z_ao
 
+		c.gender = gender
+		c.valence = valence
+		c.salience = salience
+
 		# get book title and its associated list of characters
 		if book_title in book_dictionary.keys():
 			book_dictionary[book_title].character_list[character_name] = c
@@ -334,6 +363,9 @@ def main():
 					error_file.write(character)
 				else:
 					persona = cObj.persona
+
+					persona['name'] = cObj.name
+
 					persona['extroversion'] = cObj.E
 					persona['agreeableness'] = cObj.A
 					persona['conscientiousness'] = cObj.C
@@ -346,12 +378,16 @@ def main():
 					persona['z_stability'] = cObj.zS
 					persona['z_openness'] = cObj.zO
 
+					persona['gender'] = cObj.gender
+					persona['valence'] = cObj.valence
+					persona['salience'] = cObj.salience
+
 					outfile = open(character + '.json', 'w')
 					json.dump(persona, outfile)
 					outfile.close()
 
 		except Exception as e:
-			error_file.write('Exception ' + str(e) + ' for file ' + book.title)
+			error_file.write('Exception ' + str(e) + ' for file ' + book.title + '\n')
 			continue
 
 	error_file.close()
