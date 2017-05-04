@@ -60,13 +60,13 @@ class CorpusDictionary:
 
 				for word in data['mod']:
 					if lemmatized:
-						c.persona['mod'].append(word)
+						c.persona['mod'].append(word[1])
 					else:
 						c.persona['mod'].append(word[0])
 
 				for word in data['poss']:
 					if lemmatized:
-						c.persona['poss'].append(word)
+						c.persona['poss'].append(word[1])
 					else:
 						c.persona['poss'].append(word[0])
 
@@ -91,7 +91,7 @@ class CorpusDictionary:
 	# =========================================================
 	def convert_character_to_vector(self):
 		for character in self.character_list.keys():
-			# print(character)
+			print(character)
 			char = self.character_list[character]
 			myall = []
 
@@ -100,7 +100,7 @@ class CorpusDictionary:
 				myall.extend(persona)
 
 				char.vector[mytype] = self.corpora[mytype].doc2bow(persona)
-				
+				print(mytype)
 				print(self.character_list[character].vector[mytype])
 
 			char.vector['all'] = self.corpora['all'].doc2bow(myall)

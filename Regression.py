@@ -88,5 +88,5 @@ class Regression:
 cd = CorpusDictionary('character_json')
 cd.convert_character_to_vector()
 
-r = Regression(cd)
-r.create_linear_model()
+# r = Regression(cd)
+# r.create_linear_model()
