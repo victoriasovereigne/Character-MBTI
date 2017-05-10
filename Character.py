@@ -71,12 +71,12 @@ class Book:
 					c.persona['mod'].extend([mod[j]['w'] for j in range(len(mod))])
 					c.persona['poss'].extend([poss[j]['w'] for j in range(len(poss))])
 
-					print(formal_name)
+					# print(formal_name)
 					
-					print(c.persona['agent'])
-					print(c.persona['patient'])
-					print(c.persona['mod'])
-					print(c.persona['poss'])
+					# print(c.persona['agent'])
+					# print(c.persona['patient'])
+					# print(c.persona['mod'])
+					# print(c.persona['poss'])
 
 
 	# get a coref chain from XML document
@@ -174,10 +174,10 @@ class Book:
 		reverse_names = self.reverse_possible_names() # get possible names
 		lmt = WordNetLemmatizer()
 
+		# print(reverse_names)
+
 		for afile in xml_files:
 			afile = xml_folder + '/' + afile
-			# print(afile)
-
 			tree = ET.parse(afile)
 			root = tree.getroot()
 
@@ -187,6 +187,7 @@ class Book:
 
 			postag = self.getPOSTag(afile)
 			corefs = self.corefChain(afile)
+			# print(corefs)
 
 			for s in sent:
 				s_id = int(s.attrib['id'])
@@ -208,8 +209,10 @@ class Book:
 
 								if (dep_id, s_id) in corefs.keys():
 									character = corefs[(dep_id, s_id)]
-
+									# print(character)
 									if character in reverse_names.keys():
+										
+										# print(governor, s_id, gov_id)
 										pos = postag.get((governor, s_id, gov_id), '0')
 										lemma = ''
 
@@ -218,38 +221,47 @@ class Book:
 										else:
 											lemma = lmt.lemmatize(governor)
 
-										if pos == 'JJ' or 'NN' in pos:
-											self.get_character(reverse_names[character]).persona['mod'].append((governor, lemma))
-										else:
-											self.get_character(reverse_names[character]).persona['agent'].append((governor, lemma))
+										if pos != '0':
+											if pos == 'JJ' or ('NN' in pos and pos != 'NNP'):
+												self.get_character(reverse_names[character]).persona['mod'].append((governor, lemma, pos))
+											else:
+												self.get_character(reverse_names[character]).persona['agent'].append((governor, lemma, pos))
 
 							elif dp.attrib['type'] == 'dobj':
 								governor = dp.find('governor').text
 								dependent = dp.find('dependent').text
 								dep_id = int(dp.find('dependent').attrib['idx'])
+								gov_id = int(dp.find('governor').attrib['idx'])
 
 								if (dep_id, s_id) in corefs.keys():
 									character = corefs[(dep_id, s_id)]
-
+									# print(character)
 									if character in reverse_names.keys():
+										
+										# print(governor, s_id, gov_id)
 										pos = postag.get((governor, s_id, gov_id), '0')
 										lemma = lmt.lemmatize(governor, 'v')
-
-										self.get_character(reverse_names[character]).persona['patient'].append((governor, lemma))
+										if pos != '0':
+											self.get_character(reverse_names[character]).persona['patient'].append((governor, lemma, pos))
 
 							elif dp.attrib['type'] == 'nmod:poss':
 								governor = dp.find('governor').text
 								dependent = dp.find('dependent').text
 								dep_id = int(dp.find('dependent').attrib['idx'])
+								gov_id = int(dp.find('governor').attrib['idx'])
 
 								if (dep_id, s_id) in corefs.keys():
 									character = corefs[(dep_id, s_id)]
-
+									# print(character)
 									if character in reverse_names.keys():
+										
+										# print(governor, s_id, gov_id)
 										pos = postag.get((governor, s_id, gov_id), '0')
 										lemma = lmt.lemmatize(governor)
-
-										self.get_character(reverse_names[character]).persona['poss'].append((governor, lemma))
+										if pos == 'NNP':
+											print(governor)
+										if pos != '0' and pos != 'NNP':
+											self.get_character(reverse_names[character]).persona['poss'].append((governor, lemma, pos))
 
 
 
@@ -289,7 +301,7 @@ def main():
 	gold_standard = args[1]
 	xml_folder = args[2]
 
-	f = open(gold_standard, 'r')
+	f = open(os.path.join(os.getcwd(), gold_standard), 'r')
 	lines = f.readlines()
 	f.close()
 
@@ -350,8 +362,28 @@ def main():
 			b.character_list[character_name] = c
 			book_dictionary[book_title] = b
 	
+	key = "Jane Eyre"
+	# book = book_dictionary[key]
+	# folder = xml_folder + '/' + book.book_file[:-5]
+
+	# book.create_persona(folder)
+
+	# files = os.listdir(folder)
+
+	# for character in book.character_list.keys():
+	# 	cc = book.character_list[character]
+
+	# 	for afile in files:
+	# 		f = open(folder + '/' + afile, 'r')
+	# 		lines = f.read()
+
+	# 		for name in cc.possible_names:
+	# 			if name in lines:
+	# 				print(cc.name, afile)
+
 	# going through each book and create personas of the characters
 	for key in book_dictionary.keys():
+	# for key in ["Jane Eyre"]:
 		book = book_dictionary[key]
 		folder = xml_folder + '/' + book.book_file[:-5]
 		try:
@@ -382,7 +414,7 @@ def main():
 					persona['valence'] = cObj.valence
 					persona['salience'] = cObj.salience
 
-					outfile = open(character + '.json', 'w')
+					outfile = open('character_json/' + character + '.json', 'w')
 					json.dump(persona, outfile)
 					outfile.close()
 
@@ -393,5 +425,3 @@ def main():
 	error_file.close()
 
 main()
-
-
