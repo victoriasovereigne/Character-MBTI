@@ -23,7 +23,8 @@ from nltk.tokenize import word_tokenize
 from Character import *
 
 class CorpusDictionary:
-	def __init__(self, json_folder, lemmatized=True, dictExists=False):
+	def __init__(self, json_folder, lemmatized=True, num_filter=0, no_below=1, no_above=1, 
+		word_freq_file=None, pos_tag_file=None, abstraction_only=False, get_sense=False):
 		self.json_folder = json_folder
 		self.corpora = {'agent':None, 'patient':None, 'mod':None, 'poss':None, 'all':None}
 		self.character_list = {}
@@ -35,6 +36,12 @@ class CorpusDictionary:
 		patient = []
 		mod = []
 		poss = []
+		self.modes = ['agent', 'patient', 'mod', 'poss']
+
+		self.pos_tag = {}
+		self.word_freq = {}
+
+		self.initialize_pos_freq(json_folder, word_freq_file, pos_tag_file)
 
 		for afile in json_files:
 			# print(afile)
@@ -45,6 +52,7 @@ class CorpusDictionary:
 			try:
 				f = open(afile, 'r')
 				data = json.load(f)
+
 				c.E = float(data['extroversion'])
 				c.A = float(data['agreeableness'])
 				c.C = float(data['conscientiousness'])
@@ -61,35 +69,40 @@ class CorpusDictionary:
 				c.salience = int(data['salience'])
 				c.valence = int(data['valence'])
 
-				for word in data['agent']:
-					if lemmatized:
-						c.persona['agent'].append(word[1].lower())
-					else:
-						c.persona['agent'].append(word[0].lower())
+				for m in self.modes:
+					for word in data[m]:
+						w = word[1].lower()
+						pos = self.pos_tag[w]
 
-				for word in data['patient']:
-					if lemmatized:
-						c.persona['patient'].append(word[1].lower())
-					else:
-						c.persona['patient'].append(word[0].lower())
+						if self.word_freq[w] >= num_filter:
+							# -----------------------------
+							# if we use the sense features
+							# -----------------------------
+							if get_sense:
+								hypernyms = []
+								if 'NN' in pos:
+									hypernyms = self.get_hypernyms(w, 'n') 
 
-				for word in data['mod']:
-					# print('===============================')
-					# print(word[1])
-					# self.is_person(word[1])
-					if lemmatized:
-						c.persona['mod'].append(word[1].lower())
-					else:
-						c.persona['mod'].append(word[0].lower())
+								elif 'JJ' in pos:
+									hypernyms = self.get_hypernyms(w, 'a') 
 
-				for word in data['poss']:
-					# print('===============================')
-					# print(word[1])
-					# self.is_person(word[1])
-					if lemmatized:
-						c.persona['poss'].append(word[1].lower())
-					else:
-						c.persona['poss'].append(word[0].lower())
+								elif 'VB' in pos:
+									hypernyms = self.get_hypernyms(w, 'v') 
+									print(w, pos, hypernyms)
+								
+								
+								# the sense features from wordnet will be embedded in characters
+
+							# -----------------------------
+							# if we filter out physical entity
+							# -----------------------------
+							if abstraction_only and 'NN' in pos:
+								hypernyms = self.get_hypernyms(w, 'n') 
+
+								if len(hypernyms) > 0 and 'physical_entity.n.01' not in hypernyms:
+									c.persona[m].append(w)
+							else:
+								c.persona[m].append(w)
 
 				agent.append(c.persona['agent'])
 				patient.append(c.persona['patient'])
@@ -102,25 +115,57 @@ class CorpusDictionary:
 				print(afile, e)
 
 		aall = agent + patient + mod + poss
-		# print([item for sublist in aall for item in sublist])
-		fd = FreqDist([item for sublist in poss for item in sublist])
-		for f in fd.most_common(1000):
-			print('===============================')
-			print(f)
-			# print(vn.classids(lemma=f[0]))
-			self.is_person(f[0])
 
 		self.corpora['agent'] = Dictionary(agent)
 		self.corpora['patient'] = Dictionary(patient)
 		self.corpora['mod'] = Dictionary(mod)
 		self.corpora['poss'] = Dictionary(poss)
-		self.corpora['all'] = Dictionary(agent+patient+mod+poss)
+		self.corpora['all'] = Dictionary(aall)
 
-		# self.corpora['agent'].filter_extremes(no_below=3, no_above=0.9)
-		# self.corpora['patient'].filter_extremes(no_below=3, no_above=0.9)
-		# self.corpora['mod'].filter_extremes(no_below=3, no_above=0.9)
-		# self.corpora['poss'].filter_extremes(no_below=3, no_above=0.9)
-		# self.corpora['all'].filter_extremes(no_below=3, no_above=0.9)
+		self.corpora['agent'].filter_extremes(no_below=no_below, no_above=no_above)
+		self.corpora['patient'].filter_extremes(no_below=no_below, no_above=no_above)
+		self.corpora['mod'].filter_extremes(no_below=no_below, no_above=no_above)
+		self.corpora['poss'].filter_extremes(no_below=no_below, no_above=no_above)
+		self.corpora['all'].filter_extremes(no_below=no_below, no_above=no_above)
+
+	# =========================================
+	# create pos tag and count word frequencies
+	# =========================================
+	def initialize_pos_freq(self, json_folder, word_freq_file, pos_tag_file):
+		json_files = os.listdir(json_folder)
+
+		if word_freq_file is None and pos_tag_file is None:
+			for afile in json_files:
+				name = afile[:-5]
+				afile = json_folder + '/' + afile
+
+				try:
+					f = open(afile, 'r')
+					data = json.load(f)
+
+					for m in self.modes:
+						for word in data[m]:
+							w = word[1].lower()
+							self.pos_tag[w] = word[2]
+
+							if w in self.word_freq.keys():
+								self.word_freq[w] += 1
+							else:
+								self.word_freq[w] = 1
+				except Exception as e:
+					print(afile, e)
+
+			p = open('pos_tag.json','w')
+			json.dump(self.pos_tag, p)
+
+			p = open('word_freq.json','w')
+			json.dump(self.word_freq, p)
+		else:
+			with open(pos_tag_file, 'r') as f:
+				self.pos_tag = json.load(f)
+			with open(word_freq_file, 'r') as f:
+				self.word_freq = json.load(f)
+		# =========================================
 
 	# =========================================================
 	# Converting the characters' personas into vectors
@@ -131,18 +176,17 @@ class CorpusDictionary:
 			char = self.character_list[character]
 			myall = []
 
-			for mytype in ['agent', 'patient', 'mod', 'poss']:
+			for mytype in self.modes:
 				persona = char.persona[mytype]
 				myall.extend(persona)
 
 				char.vector[mytype] = self.corpora[mytype].doc2bow(persona)
-				# print(mytype)
-				# print(self.character_list[character].vector[mytype])
 
 			char.vector['all'] = self.corpora['all'].doc2bow(myall)
 
-
+	# =========================================================
 	# save the dictionary into files
+	# =========================================================
 	def save(self):
 		self.corpora['agent'].save('agent.dict')
 		self.corpora['patient'].save('patient.dict')
@@ -150,8 +194,12 @@ class CorpusDictionary:
 		self.corpora['mod'].save('mod.dict')
 		self.corpora['all'].save('all.dict')
 
-	def is_person(self, word):
+	def get_hypernyms(self, word, pos):
 		synsets = wn.synsets(word)
+		hypernyms = []
+
+		if pos == 'a':
+			return [s.name() for s in wn.synsets(word)]
 
 		for i in range(1, len(synsets)+1):
 			x = ''
@@ -159,20 +207,21 @@ class CorpusDictionary:
 				x = '0'+str(i)
 			else:
 				x = str(i)
+			
+			sense = word + '.' + pos + '.' + x
+
 			try:
-				n = word + '.n.' + x
-				obj = wn.synset(n)
+				obj = wn.synset(sense)
 				hyper = lambda s: s.hypernyms()
 				list_hyper = list(obj.closure(hyper))
-				print(list_hyper)
-
 				for elmt in list_hyper:
-					if 'person.n.01' == elmt.name():
-						return True
-			except:
+					if elmt.name() not in hypernyms:
+						hypernyms.append(elmt.name())
+			except Exception as e:
+				# print(word, e)
 				continue
 
-		return False
+		return hypernyms
 
 # print(vn.classids(lemma='take'))
 # print(vn.classids(lemma='speak'))
