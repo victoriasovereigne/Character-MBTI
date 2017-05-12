@@ -8,7 +8,7 @@ from nltk.stem.wordnet import WordNetLemmatizer
 class Character:
 	def __init__(self, name, possible_names=None):
 		self.name = name
-		self.persona = {'agent':[], 'patient':[], 'poss':[], 'mod':[]}
+		self.persona = {'agent':[], 'patient':[], 'poss':[], 'mod':[], 'a':[], 'n':[], 'v':[]}
 		self.possible_names = possible_names
 		self.vector = {}
 
@@ -29,8 +29,17 @@ class Character:
 		self.valence = 0 # good or evil
 		self.salience = 0 # major or minor character
 
+		self.quotes = []
+		self.sense = {'a':[], 'n':[], 'v':[]}
+
 	def isEmpty(self):
-		return len(self.persona['agent']) == 0 and len(self.persona['patient']) == 0 and len(self.persona['poss']) == 0 and len(self.persona['mod']) == 0
+		c1 = len(self.persona['agent']) == 0
+		c2 = len(self.persona['patient']) == 0
+		c3 = len(self.persona['poss']) == 0 
+		c4 = len(self.persona['mod']) == 0
+		c5 = len(self.quotes) == 0
+
+		return c1 and c2 and c3 and c4 and c5
 
 		
 class Book:
@@ -363,65 +372,65 @@ def main():
 			book_dictionary[book_title] = b
 	
 	key = "Jane Eyre"
-	# book = book_dictionary[key]
-	# folder = xml_folder + '/' + book.book_file[:-5]
+	book = book_dictionary[key]
+	folder = xml_folder + '/' + book.book_file[:-5]
 
-	# book.create_persona(folder)
+	book.create_persona(folder)
 
-	# files = os.listdir(folder)
+	files = os.listdir(folder)
 
-	# for character in book.character_list.keys():
-	# 	cc = book.character_list[character]
+	for character in book.character_list.keys():
+		cc = book.character_list[character]
 
-	# 	for afile in files:
-	# 		f = open(folder + '/' + afile, 'r')
-	# 		lines = f.read()
+		for afile in files:
+			f = open(folder + '/' + afile, 'r')
+			lines = f.read()
 
-	# 		for name in cc.possible_names:
-	# 			if name in lines:
-	# 				print(cc.name, afile)
+			for name in cc.possible_names:
+				if name in lines:
+					print(cc.name, afile)
 
 	# going through each book and create personas of the characters
-	for key in book_dictionary.keys():
+	# for key in book_dictionary.keys():
 	# for key in ["Jane Eyre"]:
-		book = book_dictionary[key]
-		folder = xml_folder + '/' + book.book_file[:-5]
-		try:
-			book.create_persona(folder)
+	# 	book = book_dictionary[key]
+	# 	folder = xml_folder + '/' + book.book_file[:-5]
+	# 	try:
+	# 		book.create_persona(folder)
 
-			for character in book.character_list.keys():
-				cObj = book.character_list[character]
-				if cObj.isEmpty():
-					error_file.write(character)
-				else:
-					persona = cObj.persona
+	# 		for character in book.character_list.keys():
+	# 			cObj = book.character_list[character]
+	# 			if cObj.isEmpty():
+	# 				error_file.write(character)
+	# 			else:
+	# 				persona = cObj.persona
 
-					persona['name'] = cObj.name
+	# 				persona['name'] = cObj.name
 
-					persona['extroversion'] = cObj.E
-					persona['agreeableness'] = cObj.A
-					persona['conscientiousness'] = cObj.C
-					persona['stability'] = cObj.S
-					persona['openness'] = cObj.O
+	# 				persona['extroversion'] = cObj.E
+	# 				persona['agreeableness'] = cObj.A
+	# 				persona['conscientiousness'] = cObj.C
+	# 				persona['stability'] = cObj.S
+	# 				persona['openness'] = cObj.O
 
-					persona['z_extroversion'] = cObj.zE
-					persona['z_agreeableness'] = cObj.zA
-					persona['z_conscientiousness'] = cObj.zC
-					persona['z_stability'] = cObj.zS
-					persona['z_openness'] = cObj.zO
+	# 				persona['z_extroversion'] = cObj.zE
+	# 				persona['z_agreeableness'] = cObj.zA
+	# 				persona['z_conscientiousness'] = cObj.zC
+	# 				persona['z_stability'] = cObj.zS
+	# 				persona['z_openness'] = cObj.zO
 
-					persona['gender'] = cObj.gender
-					persona['valence'] = cObj.valence
-					persona['salience'] = cObj.salience
+	# 				persona['gender'] = cObj.gender
+	# 				persona['valence'] = cObj.valence
+	# 				persona['salience'] = cObj.salience
 
-					outfile = open('character_json/' + character + '.json', 'w')
-					json.dump(persona, outfile)
-					outfile.close()
+	# 				outfile = open('character_json/' + character + '.json', 'w')
+	# 				json.dump(persona, outfile)
+	# 				outfile.close()
 
-		except Exception as e:
-			error_file.write('Exception ' + str(e) + ' for file ' + book.title + '\n')
-			continue
+	# 	except Exception as e:
+	# 		error_file.write('Exception ' + str(e) + ' for file ' + book.title + '\n')
+	# 		continue
 
 	error_file.close()
 
-main()
+# main()
