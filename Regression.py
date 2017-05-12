@@ -18,7 +18,7 @@ from Character import *
 from CorpusDictionary import *
 
 class Regression:
-	def __init__(self, corpus_dict, salient_only=False):
+	def __init__(self, corpus_dict, salient_only=False, features=[]):
 		self.corpus_dict = corpus_dict
 		self.elasticnet = {}
 
@@ -33,10 +33,16 @@ class Regression:
 
 		X = {}
 		y = {}
-		modes = ['agent', 'patient', 'mod', 'poss', 'all']
+
+		self.modes = ['agent', 'patient', 'mod', 'poss', 'all', 'a', 'n', 'v', 'sense_all']
 		ffm = ['E', 'A', 'C', 'S', 'O']
 
-		for mode in modes:
+		self.X_train2 = []
+		self.X_val2 = []
+		self.X_test2 = []
+		X2 = []
+
+		for mode in self.modes:
 			self.X_train[mode] = []
 			self.X_val[mode] = []
 			self.X_test[mode] = []
@@ -55,6 +61,16 @@ class Regression:
 
 		num_data = 0
 
+		self.dictionary = self.corpus_dict.create_dictionary(features)
+		self.sense_id = []
+		self.word_id = []
+
+		for word in self.dictionary.token2id.keys():
+			if '_sense' in word:
+				self.sense_id.append(self.dictionary.token2id[word])
+			else:
+				self.word_id.append(self.dictionary.token2id[word])
+
 		# print("============training==============")
 		for key in keys:
 			c = char_list[key]
@@ -62,12 +78,20 @@ class Regression:
 			if c.salience == 1:
 				print(c.name, c.gender, c.salience, c.valence)
 
-			for mode in modes:
+			for f in features:
+				if (salient_only and c.salience == 1) or not salient_only:
+					vector = self.corpus_dict.convert_character_to_vector2(c, self.dictionary, features)
+					sparse = self.doc2bow_to_sparse_vector(vector, len(self.dictionary), gender=c.gender, salience=c.salience, valence=c.valence)
+					X2.append(sparse)
+
+			# print(c)
+			# print(X2)
+			# return
+
+			for mode in self.modes:
 				if (salient_only and c.salience == 1) or not salient_only:
 					sparse = self.doc2bow_to_sparse_vector(c.vector[mode], len(self.corpus_dict.corpora[mode]), gender=c.gender, salience=c.salience, valence=c.valence)
-					# print(sparse)
 					X[mode].append(sparse)
-					
 
 			if (salient_only and c.salience == 1) or not salient_only:
 				num_data +=1
@@ -83,6 +107,9 @@ class Regression:
 				y['zS'].append(c.zS)
 				y['zO'].append(c.zO)
 
+		# print(X2)
+		# print(y)
+
 		N = range(num_data)
 		print("num data",num_data)
 
@@ -93,7 +120,9 @@ class Regression:
 		# print(ny_train, ny_val, ny_test)
 
 		for i in nx_train:
-			for mode in modes:
+			self.X_train2.append(X2[i])
+
+			for mode in self.modes:
 				self.X_train[mode].append(X[mode][i])
 
 			for f in ffm:
@@ -101,7 +130,8 @@ class Regression:
 				self.y_train['z'+f].append(y['z'+f][i])
 
 		for i in nx_val:
-			for mode in modes:
+			self.X_val2.append(X2[i])
+			for mode in self.modes:
 				self.X_val[mode].append(X[mode][i])
 
 			for f in ffm:
@@ -109,7 +139,8 @@ class Regression:
 				self.y_val['z'+f].append(y['z'+f][i])
 
 		for i in nx_test:
-			for mode in modes:
+			self.X_test2.append(X2[i])
+			for mode in self.modes:
 				self.X_test[mode].append(X[mode][i])
 
 			for f in ffm:
@@ -122,17 +153,21 @@ class Regression:
 		# (230, 3633) (77, 3633) (77, 3633) --> poss
 		# (230, 7178) (77, 7178) (77, 7178) --> all
 
-		for m in modes:
-			print(np.array(self.X_train[m]).shape, np.array(self.X_val[m]).shape, np.array(self.X_test[m]).shape)
+		# for m in self.modes:
+		# 	print(np.array(self.X_train[m]).shape, np.array(self.X_val[m]).shape, np.array(self.X_test[m]).shape)
+
+		print(np.array(self.X_train2).shape, np.array(self.X_val2).shape, np.array(self.X_test2).shape)
 
 		# for f in ffm:
 		# 	print(np.array(self.y_train[f]).shape, np.array(self.y_val[f]).shape, np.array(self.y_test[f]).shape)
 
 	def train_elasticnet_model(self, mode, ffm):
-		X_train = np.array(self.X_train[mode])
+		# X_train = np.array(self.X_train[mode])
+		X_train = np.array(self.X_train2)
 		y_train = np.array(self.y_train[ffm])
 
-		X_val = np.array(self.X_val[mode])
+		# X_val = np.array(self.X_val[mode])
+		X_val = np.array(self.X_val2)
 		y_val = np.array(self.y_val[ffm])
 
 		l1ratios = np.linspace(0.1, 1, 10)
@@ -176,21 +211,25 @@ class Regression:
 
 		# print(enet2.alpha_)
 
-		self.elasticnet[(mode, ffm)] = enet2
+		key = tuple(mode + [ffm])
+		self.elasticnet[key] = enet2
 
-		return self.elasticnet[(mode, ffm)]
+		return self.elasticnet[key]
 
 	def test_elasticnet_model(self, mode, ffm):
 		print("=================================")
 		print(mode, ffm)
 		print("=================================")
-		X_test = np.array(self.X_test[mode])
+		# X_test = np.array(self.X_test[mode])
+		X_test = np.array(self.X_test2)
 		y_test = np.array(self.y_test[ffm])
 
-		enet = self.elasticnet[(mode, ffm)]
+		key = tuple(mode + [ffm])
+
+		enet = self.elasticnet[key]
 		y_pred = enet.predict(X_test)
 
-		tokens = {k:v for (k,v) in self.corpus_dict.corpora[mode].items()}
+		tokens = {k:v for (k,v) in self.dictionary.items()}
 		pairs = []
 
 		for i,coef in enumerate(enet.coef_):
@@ -229,11 +268,15 @@ class Regression:
 
 		total = 0
 		for (a, b) in d:
-			total += b
+			if a in self.sense_id:
+				total += b
 
-		if total > 0:
- 			for (a, b) in d:
- 				ans[a] = b
+		# if total > 0:
+		for (a, b) in d:
+			if a in self.sense_id:
+				ans[a] = b #(b+1) / (total/length)
+			else:
+				ans[a] = b #/ total
 
 		ans[length-1] = valence
 		ans[length-2] = salience
@@ -264,17 +307,21 @@ def main():
 	json_folder = 'character_json1'
 	word_freq = 'word_freq.json'
 	pos_tag = 'pos_tag.json'
+	word_hypernyms = 'word_hypernyms.json'
+	sense_freq = 'sense_freq.json'
 	abstraction = False
 	sense = False
 	nobelow = 20
 	salient = False
-
+	num_filter = 10
+	sense_filter = {'a':10, 'n':500, 'v':1000}
+	print("sense_filter", sense_filter)
 	ffm = ''
 	mode = ''
-
 	for arg in sys.stdin:
+		print(arg.strip())
 		if arg.startswith('mode'):
-			mode = arg.split('=')[1].strip()
+			mode = arg.split('=')[1].strip().split(',')
 		elif arg.startswith('ffm'):
 			ffm = arg.split('=')[1].strip()
 		elif arg.startswith('json_folder'):
@@ -291,19 +338,25 @@ def main():
 				sense = True
 		elif arg.startswith('nobelow'):
 			nobelow = int(arg.split('=')[1].strip())
+		elif arg.startswith('num_filter'):
+			num_filter = int(arg.split('=')[1].strip())
 		elif arg.startswith('salient'):
 			if arg.split('=')[1].strip() == 'True':
 				salient = True
 
+	# print(args)
+
 	# print(mode)
 	cd = CorpusDictionary(json_folder, word_freq_file=word_freq, 
-						pos_tag_file=pos_tag, abstraction_only=abs, get_sense=sense,
-						no_below=nobelow, no_above=1)
+		pos_tag_file=pos_tag, sense_freq_file=sense_freq, word_hypernyms_file=word_hypernyms,
+		abstraction_only=abstraction, get_sense=sense, no_below=nobelow, no_above=1, 
+		num_filter=num_filter, sense_filter=sense_filter)
 	cd.convert_character_to_vector()
 
-	r = Regression(cd, salient_only=True)
+	r = Regression(cd, salient_only=salient, features=mode)
 
-	r.train_elasticnet_model(mode, ffm)
-	r.test_elasticnet_model(mode, ffm)
+	for ffm in ['A', 'E', 'C', 'O', 'S']:
+		r.train_elasticnet_model(mode, ffm)
+		r.test_elasticnet_model(mode, ffm)
 
 main()

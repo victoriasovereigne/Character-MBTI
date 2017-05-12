@@ -1,9 +1,10 @@
-mode = agent 
-ffm = C 
-json_folder = char_json 
+mode = n,a,v,agent,poss,mod,patient
+ffm = C
+json_folder = character_json1
 word_freq = word_freq.json 
 pos_tag = pos_tag.json 
 abstraction = True 
-sense = False
-nobelow = 20 
-salient = True
+sense = True
+nobelow = 50
+salient = False
+num_filter = 20
