@@ -1,0 +1,358 @@
+=============================
+To run: Regression.py < [param file]
+
+Example: Regression.py < params.txt
+=============================
+sense_filter {'v': 50, 'a': 10, 'n': 50}
+mode = a
+ffm = S
+json_folder = character_json1
+word_freq = word_freq.json
+pos_tag = pos_tag.json
+abstraction = True
+sense = True
+nobelow = 50
+salient = False
+num_filter = 20
+Initializing POS tags...
+Initializing word frequencies...
+Initializing sense frequencies...
+Initializing word hypernyms...
+Checking POS tag file...
+exists
+Checking word frequencies file...
+exists
+Checking sense frequencies file...
+exists
+Checking word hypernyms file...
+exists
+Adam Bede 1 1 1
+Agnes Grey 2 1 1
+Alec d'Urberville 1 1 2
+Alice 2 1 1
+Alice Vavasor 2 1 1
+Allan Quatermain 1 1 1
+Alton Locke 1 1 1
+Amelia Sedley 2 1 1
+Anna Tellwright 2 1 1
+Anne Elliot 2 1 1
+Arabella Donn 2 1 2
+Arthur Clennam 1 1 1
+Arthur Huntingdon 1 1 2
+Austin Sloper 1 1 2
+Baroness Eugenia of Silberstadt-Schr 2 1 1
+Belinda 2 1 1
+Bertha Rochester 2 1 2
+Burgo Fitzgerald 1 1 2
+Captain Rawdon Crawley 1 1 2
+Captain Wentworth 1 1 1
+Caroline Bingley 2 1 2
+Catherine Earnshaw (later Linton) 2 1 1
+Catherine Morland 2 1 1
+Catherine Sloper 2 1 1
+Cathy Linton 2 1 1
+Cecil Vyse 1 1 2
+Charles Darnay 1 1 1
+Charles Wilcox 1 1 2
+Christopher Newman 1 1 1
+Clare Hyacinth Kirkpatrick Gibson 2 1 2
+Colonel Guy Mannering 1 1 1
+Count Dracula 1 1 2
+Cynthia Kirkpatrick 2 1 1
+Daniel Deronda 1 1 1
+Daniel Quilp 1 1 2
+David Balfour 1 1 1
+David Copperfield 1 1 1
+District Manager 1 1 2
+Dorian Gray 1 1 1
+Dorothea Brooke 2 1 1
+Dr. Henry Jekyll 1 1 1
+Dr. Tertius Lydgate 1 1 1
+Ebenezer Balfour 1 1 2
+Edward Hyde 1 1 2
+Edward Waverley 1 1 1
+Edwin Reardon 1 1 1
+Eleanor Harding 2 1 1
+Elinor Dashwood 2 1 1
+Elizabeth Bennet 2 1 1
+Emily (Little Em'ly) 2 1 1
+Emma Woodhouse 2 1 1
+Estella 2 1 1
+Esther Summerson 2 1 1
+Esther Waters 2 1 1
+Eustacia Vye 2 1 1
+Fagin 1 1 2
+Fanny Dashwood 2 1 2
+Fanny Price 2 1 1
+Festus Derriman 1 1 2
+Fitzwilliam Darcy 1 1 1
+Florence Dombey 2 1 1
+Frederick Fairlie 1 1 2
+Gabriel John Utterson 1 1 1
+Gabriel Oak 1 1 1
+Gagool 2 1 2
+Geordie Robertson (George Staunt) 1 1 2
+George Rouncewell 1 1 1
+George Talboys 1 1 1
+George Vavasor 1 1 2
+Gerald Scales 1 1 2
+Gerard Eliason (Brother Clement) 1 1 1
+Godfrey Ablewhite 1 1 2
+Godwin Peak 1 1 1
+Griffin 1 1 1
+Gwendolen Harleth 2 1 1
+Hareton Earnshaw 1 1 1
+Harold Skimpole 1 1 1
+Harry Coningsby 1 1 1
+Harvey Cheyne 1 1 1
+Heathcliff 1 1 1
+Helen Graham (Helen Huntingdon) 2 1 1
+Henry Esmond 1 1 1
+Henry Pelham 1 1 1
+Hester Sorrel 2 1 2
+Isabel Archer 2 1 1
+James Durie 1 1 2
+Jane Eyre 2 1 1
+Jeanie Deans 2 1 1
+Jim 1 1 1
+Jim Hawkins 1 1 1
+John Chester 1 1 2
+John Dashwood 1 1 2
+John Harmon (Julius Handford) 1 1 1
+John Willoughby 1 1 2
+Jonathan Harker 1 1 1
+Joseph 1 1 2
+Jude Fawley 1 1 1
+Kate Croy 2 1 2
+Kate Payton 2 1 1
+Kimball (Kim) O'Hara 1 1 1
+Kurtz 1 1 2
+La Signora Madeline Vesey Neroni 2 1 2
+Lady Bertram 2 1 2
+Lady Catherine de Bourgh 2 1 2
+Lady Verinder 2 1 1
+Lambert Strether 1 1 1
+Lilia Herriton 2 1 1
+Lilian (Lily) Dale 2 1 1
+Lizzie Eustace 2 1 2
+Long John Silver 1 1 2
+Louisa Gradgrind 2 1 1
+Lucie Manette 2 1 1
+Lucilla Marjoribanks 2 1 1
+Lucy Graham 2 1 2
+Lucy Honeychurch 2 1 1
+Lucy Snowe 2 1 1
+Lydia Gwilt 2 1 2
+Madame Therese Defarge 2 1 2
+Maggie Tulliver 2 1 1
+Maggie Verver 2 1 1
+Maisie Farange 2 1 1
+Margaret Hale 2 1 1
+Margaret Mackenzie 2 1 1
+Margaret Schlegel 2 1 1
+Maria Crawford 2 1 2
+Maria Minchin 2 1 2
+Marian Halcombe 2 1 1
+Marianne Dashwood 2 1 1
+Marlow 1 1 1
+Mary Barton 2 1 1
+Mary Lennox 2 1 1
+Maud Ruthyn 2 1 1
+Miss Havisham 2 1 2
+Mlle Frances Evans Henri 2 1 1
+Molly Gibson 2 1 1
+Mowgli 1 1 1
+Mr. Alfred Jingle 1 1 2
+Mr. Boldwood 1 1 1
+Mr. Brocklehurst 1 1 2
+Mr. Camperdown 1 1 2
+Mr. Lockwood 1 1 1
+Mr. Redgauntlet 1 1 1
+Mr. Vane 1 1 1
+Mr. Verloc 1 1 1
+Mr. Wickham 1 1 2
+Mrs. Clay 2 1 2
+Mrs. Elinor Cadwallader 2 1 1
+Mrs. Norris 2 1 2
+Mrs. Proudie 2 1 2
+Mrs. Reed 2 1 2
+Mrs. Sparsit 2 1 2
+Nicholas Sowerby 1 1 2
+Nostromo (Giovanni Battista Fidanza) 1 1 1
+Olive Chancellor 2 1 1
+Oliver Twist 1 1 1
+Philip Hepburn 1 1 1
+Phineas Finn 1 1 1
+Pip (Philip Pirrip) 1 1 1
+Prendick 1 1 1
+Prince Amerigo 1 1 1
+Princess Casamassima 2 1 1
+Rachel Ray 2 1 1
+Razumov 1 1 1
+Rebecca (Becky) Sharp 2 1 1
+Redmond Barry 1 1 1
+Reverend Jeremiah Maguire 1 1 2
+Reverend Philip Elton 1 1 2
+Rhoda Nunn 2 1 1
+Richard (Dick) Dewy 1 1 1
+Richard Swiveller (Dick) 1 1 1
+Robert Audley 1 1 1
+Robert Walton 1 1 1
+Robert Wringham Colwan 1 1 2
+Romola de' Bardi 1 1 1
+Rosa Dartle 2 1 2
+Rosamond Vincy Lydgate 2 1 1
+Sara Crewe 2 1 1
+Sergeant Cuff 1 1 1
+Sherlock Holmes 1 1 1
+Silas Wegg 1 1 2
+Sir Brian de Bois-Guilbert 1 1 2
+Sir Thomas Bertram 1 1 2
+Sir Walter Elliot 1 1 2
+Sir Willoughby Patterne 1 1 2
+Soames Forsyte 1 1 2
+Sophia Baines 2 1 1
+Stephen Blackpool 1 1 1
+Stephen Hargraves 1 1 2
+Sydney Carton 1 1 1
+Tess Durbeyfield 2 1 1
+The Mad Hatter 1 1 1
+The Monster 1 1 2
+The Queen of Hearts 2 1 2
+The Reverend Josiah Crawley 1 1 1
+The Reverend Obadiah Slope 1 1 2
+The Reverend Septimus Harding 1 1 1
+Thomas Gradgrind 1 1 1
+Tito Melema 1 1 2
+Tom Brown 1 1 1
+Tom Tulliver 1 1 2
+Victor Frankenstein 1 1 1
+Walter Hartright 1 1 1
+Wilfred of Ivanhoe 1 1 1
+William Crimsworth 1 1 1
+William Elliot 1 1 2
+Winifred Hurtle 2 1 2
+num data 384
+(230, 53) (77, 53) (77, 53)
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+optimal l1 0.8
+optimal alpha 0.0636054630965
+Training MSE 2.3396534065
+Validation MSE 2.50252448543
+Training Pearson R (0.3721130906061757, 5.7770291463315834e-09)
+Validation Pearson R (0.16311896273848092, 0.15634715198778304)
+Training R2 score: 0.109991730275
+Validation R2 score: 0.0128230298231
+=================================
+['a'] S
+=================================
+0.131070202408 afraid_sense
+0.077362314639 dependable_sense
+0.0519912373963 gladiolus_sense
+0.0383950552645 own_sense
+0.0332479473621 beaming_sense
+0.0252690773115 dumb_sense
+0.0222021708138 silent_sense
+0.0218181616622 mum_sense
+0.0125092336185 glad_sense
+0.000681094668475 indisputable_sense
+-0.155009192595 deplorable_sense
+-0.0866989637267 thoroughly_sense
+-0.086096730771 commodity_sense
+-0.0132302987253 full_sense
+-0.00459618491502 clear_sense
+-0.00247639529679 open_sense
+-0.0 able_sense
+-0.0 adept_sense
+-0.0 afford_sense
+-0.0 assailable_sense
+R2 score: -0.0716032470231
+MSE: 2.22525833985
+(0.14773796908902403, 0.19975833255545869)
+3.0 4.50412535634
+3.75 4.34911616374
+4.5 3.87010178115
+4.75 3.3157435055
+4.375 3.97420668486
+4.5 4.01260174013
+3.5 3.19335742383
+3.75 4.59985500583
+2.5 3.70258335494
+2.5 3.82134541122
+6.4 4.07162133449
+4.0 3.38144560681
+2.5 3.97420668486
+2.75 3.2655409181
+5.5 4.50412535634
+1.5 4.45513593841
+2.0 4.56825737225
+3.5 4.50412535634
+1.5 3.64915988994
+6.5 3.44094300712
+3.0 4.9162897848
+3.95 3.97420668486
+4.5 4.50412535634
+2.5 4.56825737225
+4.75 4.9260178315
+6.416666667 4.05628746934
+2.5 4.60187377471
+3.8125 3.96509139981
+5.5 3.81655358835
+1.333333333 4.49705277613
+1.5 4.69962219309
+4.833333333 4.36686284058
+5.5 3.98185524106
+3.5 4.50412535634
+7.0 4.63646120574
+2.0 4.85557302173
+5.0 5.6313159721
+1.5 3.78295035596
+2.5 4.61752861587
+4.0 4.06049338617
+4.75 4.49353099367
+5.0 5.19013601421
+5.166666667 4.45513593841
+2.625 4.69932757466
+4.0 4.16970352162
+3.5 4.08227694488
+4.333333333 3.78295035596
+4.5 4.45513593841
+4.0 3.77020807434
+1.0 3.2949485222
+2.0 3.81919749227
+4.75 4.85251091939
+3.0 4.47404975874
+3.833333333 4.5425204116
+7.0 3.97420668486
+4.166666667 3.78295035596
+5.416666667 3.97420668486
+5.75 4.65404371059
+5.0 3.2949485222
+5.0 4.63972416978
+2.833333333 3.79654002995
+4.5 4.34911616374
+2.5 3.97420668486
+3.5 3.13993932961
+4.166666667 3.25303168448
+4.0 4.60187377471
+4.6 4.6733852594
+3.0 4.01135181887
+2.5 3.97420668486
+6.0 4.45513593841
+3.0 3.39044080512
+3.833333333 4.11229673894
+6.5 5.01711416938
+1.5 3.85974046648
+4.805555556 4.84098152172
+2.0 3.78295035596
+4.141428571 3.77587777574
+
