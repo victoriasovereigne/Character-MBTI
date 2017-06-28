@@ -4,6 +4,9 @@ import json
 from pprint import pprint
 import sys
 from nltk.stem.wordnet import WordNetLemmatizer
+from nltk.corpus import stopwords
+import nltk
+from nltk.tokenize import sent_tokenize
 
 class Character:
 	def __init__(self, name, possible_names=None):
@@ -30,7 +33,10 @@ class Character:
 		self.salience = 0 # major or minor character
 
 		self.quotes = []
+		self.dialogue_tag = []
 		self.sense = {'a':[], 'n':[], 'v':[]}
+		self.adjectives = []
+		self.adverbs = []
 
 	def isEmpty(self):
 		c1 = len(self.persona['agent']) == 0
@@ -40,17 +46,88 @@ class Character:
 		c5 = len(self.quotes) == 0
 
 		return c1 and c2 and c3 and c4 and c5
-
 		
+adverb_dict = {}
+
 class Book:
 	def __init__(self, title):
 		self.title = title
-		self.json = ''
+		self.author = ''
 		self.book_file = ''
 
 		# dictionary with formal names as keys and Character object
 		self.character_list = {} 
 		# self.persona = {}
+		self.char_sent = {}
+		self.char_quote = {}
+
+	def process_quotes(self, quote_file):
+		f = open(quote_file, 'r')
+		sw = stopwords.words('english')
+
+		# print(sw)
+		print(quote_file)
+
+		text = f.read()
+		reverse_names = self.reverse_possible_names()
+
+		tt = text.split('================================')
+		# print(tt)
+		print(len(tt))
+
+		for t in tt:
+			if len(t) > 0:
+				t = t.strip()
+				tmp = t.split('--------------------------------')
+				
+				dialogue_tag = tmp[0].strip()
+				sent = sent_tokenize(dialogue_tag)
+
+				if len(sent) > 1:
+					dialogue_tag = sent[0]
+				# print(dialogue_tag, sent)
+
+				quote = tmp[1].strip().split('\n')
+
+				for name in reverse_names.keys():
+					d = dialogue_tag.split(' ')
+
+					# character is the speaker
+					if len(d) > 2:
+						length_name = len(name.split(' '))
+						orig_name = reverse_names[name]
+						
+						# if 'Mr.' in dialogue_tag or 'Jarvis' in dialogue_tag or 'Lorry' in dialogue_tag:
+						# print(name, ':', dialogue_tag)
+
+						if (length_name == 1 and (name in d[0] or name in d[1])) or (length_name > 1 and (name in ' '.join(d[0:length_name]) or name in ' '.join(d[1:length_name+1]))):
+							charObj = self.character_list[orig_name]
+							
+							if quote not in charObj.quotes and dialogue_tag not in charObj.dialogue_tag:
+								charObj.quotes.extend(quote)
+								charObj.dialogue_tag.append(dialogue_tag)
+
+		
+		for c in self.character_list.keys():
+			chara = self.character_list[c]
+			print(c)
+			dt = chara.dialogue_tag
+			print(dt)
+
+			for tag in dt:
+				t = nltk.word_tokenize(tag)
+				pos = nltk.pos_tag(t)
+				
+				for pt in pos:
+					if pt[1] == 'RB' and pt[0] not in sw and pt[0] != 'X':
+						
+						if pt[0] in adverb_dict.keys():
+							adverb_dict[pt[0]] += 1
+						else:
+							adverb_dict[pt[0]] = 1
+
+						print(pt[0], end=', ')
+			print()
 
 	def process_book_file(self):
 		data_file = open(self.book_file, 'r')
@@ -79,13 +156,6 @@ class Book:
 					c.persona['patient'].extend([patient[j]['w'] for j in range(len(patient))])
 					c.persona['mod'].extend([mod[j]['w'] for j in range(len(mod))])
 					c.persona['poss'].extend([poss[j]['w'] for j in range(len(poss))])
-
-					# print(formal_name)
-					
-					# print(c.persona['agent'])
-					# print(c.persona['patient'])
-					# print(c.persona['mod'])
-					# print(c.persona['poss'])
 
 
 	# get a coref chain from XML document
@@ -120,10 +190,93 @@ class Book:
 					# only change if proper noun
 					dict_name[(head,sentence_num)] = myname
 
-		# for key in dict_name.keys():
-		# 	print(key, dict_name[key])
-
 		return dict_name
+	
+	# given an XML file and sentence_id, construct the sentence fully
+	def construct_sentence(self, filename, sentence_id):
+		tree = ET.parse(filename)
+		root = tree.getroot()
+		doc = root.find('document')
+		sentences = doc.find('sentences')
+		sent = sentences.findall('sentence')
+
+		final_sentence = ''
+
+		for s in sent:
+			s_id = int(s.attrib['id'])
+			
+			if s_id == sentence_id:
+				token = s.iter('token')
+
+				for t in token:
+					word = t.find('word').text
+					final_sentence += word + ' '
+
+		return final_sentence
+
+	def getSpeaker(self, filename):
+		tree = ET.parse(filename)
+		root = tree.getroot()
+		doc = root.find('document')
+		sentences = doc.find('sentences')
+		sent = sentences.findall('sentence')
+
+		speaker = {}
+
+		for s in sent:
+			s_id = int(s.attrib['id'])
+			token = s.iter('token')
+
+			for t in token:
+				t_id = int(t.attrib['id'])
+
+				if t.find('Speaker') == None:
+					# print('None speaker')
+					continue 
+				else:
+					speak = t.find('Speaker').text
+					word = t.find('word').text
+					speaker[(word, s_id, t_id)] = speak
+
+		return speaker
+
+	def buildDependencyTrees(self, filename):
+		tree = ET.parse(filename)
+		root = tree.getroot()
+		doc = root.find('document')
+		sentences = doc.find('sentences')
+		sent = sentences.findall('sentence')
+
+		trees = {}
+
+		for s in sent:
+			tree_dict = {}
+
+			s_id = int(s.attrib['id'])
+			dependencies = s.findall('dependencies')
+
+			for d in dependencies:
+				if d.attrib['type'] == 'enhanced-plus-plus-dependencies':
+					dep = d.findall('dep')
+
+					for dp in dep:
+						relation = dp.attrib['type']
+						governor = dp.find('governor').text
+						dependent = dp.find('dependent').text
+
+						# print(governor, dependent)
+
+						dep_id = int(dp.find('dependent').attrib['idx'])
+						gov_id = int(dp.find('governor').attrib['idx'])
+
+						if (gov_id, governor) in tree_dict.keys():
+							tree_dict[(gov_id, governor)].append((dep_id, dependent, relation))
+						else:
+							tree_dict[(gov_id, governor)] = [(dep_id, dependent, relation)]
+
+			trees[s_id] = tree_dict
+
+		return trees
 
 	# get pos tag from an XML document
 	def getPOSTag(self, filename):
@@ -177,6 +330,15 @@ class Book:
 			persona[key] = self.character_list[key].persona
 		return persona
 
+	def dfs(self, tree, key):
+		if key in tree.keys():
+			print("root:", key)
+			children = tree[key]
+			print("\tchildren:", children)
+
+			for child in children:
+				self.dfs(tree, (child[0], child[1]))
+
 	# create persona out of xml files
 	def create_persona(self, xml_folder):
 		xml_files = os.listdir(xml_folder) # get the XML files from the folder
@@ -196,82 +358,137 @@ class Book:
 
 			postag = self.getPOSTag(afile)
 			corefs = self.corefChain(afile)
-			# print(corefs)
+			speaker = self.getSpeaker(afile)
+			trees = self.buildDependencyTrees(afile)
 
 			for s in sent:
 				s_id = int(s.attrib['id'])
-				enhanced_dep = s.findall('dependencies')
+				mytree = trees[s_id]
 
-				for d in enhanced_dep:
-					if d.attrib['type'] == 'enhanced-plus-plus-dependencies':
-						dep = d.findall('dep')
+				for key in mytree.keys():
+					(gov_id, governor) = key
+					children = mytree[key]
 
-						potential_pred = ''
-						tmp_id = 0
+					for child in children:
+						(dep_id, dependent, relation) = child
 
-						for dp in dep:
-							if dp.attrib['type'] == 'nsubj':
-								governor = dp.find('governor').text
-								dependent = dp.find('dependent').text
-								dep_id = int(dp.find('dependent').attrib['idx'])
-								gov_id = int(dp.find('governor').attrib['idx'])
+						if relation in ['nsubj', 'nsubjpass', 'dobj', 'nmod:poss']:
+							if (dep_id, s_id) in corefs.keys():
+								character = corefs[(dep_id, s_id)]
+									
+								if character in reverse_names.keys():
+									sentence = self.construct_sentence(afile, s_id)
+									orig_name = reverse_names[character]
 
-								if (dep_id, s_id) in corefs.keys():
-									character = corefs[(dep_id, s_id)]
-									# print(character)
-									if character in reverse_names.keys():
-										
-										# print(governor, s_id, gov_id)
-										pos = postag.get((governor, s_id, gov_id), '0')
-										lemma = ''
+									# get the full sentences
+									if orig_name in self.char_sent.keys():
+										if sentence not in self.char_sent[orig_name] and '``' not in sentence and '"' not in sentence and "''" not in sentence: # not quote
+											self.char_sent[orig_name].append(sentence)
+									else:
+										if '``' not in sentence and '"' not in sentence and "''" not in sentence:
+											self.char_sent[orig_name] = [sentence]
 
-										if pos[0] == 'V':
-											lemma = lmt.lemmatize(governor, 'v')
-										else:
-											lemma = lmt.lemmatize(governor)
+									pos = postag.get((governor, s_id, gov_id), '0')
+									lemma = ''
 
+									if pos[0] == 'V':
+										lemma = lmt.lemmatize(governor, 'v').lower()
+									else:
+										lemma = lmt.lemmatize(governor).lower()
+
+									# ---------------------------------------------
+									# start nsubj
+									# ---------------------------------------------
+									if relation == 'nsubj':
+										# ---------------------------------------------
+										# regular agent
+										# ---------------------------------------------
 										if pos != '0':
 											if pos == 'JJ' or ('NN' in pos and pos != 'NNP'):
-												self.get_character(reverse_names[character]).persona['mod'].append((governor, lemma, pos))
+												self.get_character(reverse_names[character]).persona['mod'].append((lemma, pos))
 											else:
-												self.get_character(reverse_names[character]).persona['agent'].append((governor, lemma, pos))
+												self.get_character(reverse_names[character]).persona['agent'].append((lemma, pos))
 
-							elif dp.attrib['type'] == 'dobj':
-								governor = dp.find('governor').text
-								dependent = dp.find('dependent').text
-								dep_id = int(dp.find('dependent').attrib['idx'])
-								gov_id = int(dp.find('governor').attrib['idx'])
+										# ---------------------------------------------
+										# find the adverb
+										# ---------------------------------------------
+										if (gov_id, governor) in mytree.keys():
+											children2 = mytree[(gov_id, governor)]
+											relations = ['advmod', 'xcomp', 'nmod:with', 'nmod:in']
 
-								if (dep_id, s_id) in corefs.keys():
-									character = corefs[(dep_id, s_id)]
-									# print(character)
-									if character in reverse_names.keys():
-										
-										# print(governor, s_id, gov_id)
-										pos = postag.get((governor, s_id, gov_id), '0')
-										lemma = lmt.lemmatize(governor, 'v')
+											for child2 in children2:
+												rel2 = child2[2]
+												dep2 = child2[1]
+												dep_id2 = child2[0]
+
+												postagg = postag[(dep2, s_id, dep_id2)]
+												
+												if rel2 in relations:
+													print(orig_name, ':', governor, dep2 + ' (' + postagg + ')', rel2)
+
+													if postagg == 'RB':
+														self.get_character(reverse_names[character]).adverbs.append(dep2.lower())
+													elif 'VB' in postagg:
+														lemma2 = lmt.lemmatize(dep2, 'v').lower()
+														self.get_character(reverse_names[character]).persona['agent'].append((lemma2, postagg))
+													elif 'NN' in postagg:
+														lemma2 = lmt.lemmatize(dep2).lower()
+														self.get_character(reverse_names[character]).persona['poss'].append((lemma2, postagg))
+													elif 'JJ' in postagg:
+														self.get_character(reverse_names[character]).adjectives.append(dep2.lower())
+
+													if 'NN' in postagg:
+														children3 = mytree.get((dep_id2, dep2), [])
+
+														for child3 in children3:
+															dep_id3 = child3[0]
+															dep3 = child3[1]
+															rel3 = child3[2]
+
+															postagg3 = postag[(dep3, s_id, dep_id3)]
+															
+															if rel3 == 'amod':
+																print(dep3, dep2)
+																self.get_character(reverse_names[character]).adjectives.append(dep3)
+										# ---------------------------------------------
+										# end find the adverb
+										# ---------------------------------------------
+						
+									# ---------------------------------------------
+									# end nsubj
+									# ---------------------------------------------
+									# start dobj, nsubjpass
+									# ---------------------------------------------
+									elif relation in ['dobj', 'nsubjpass']:
+										# ---------------------------------------------
+										# regular patient
+										# ---------------------------------------------
 										if pos != '0':
-											self.get_character(reverse_names[character]).persona['patient'].append((governor, lemma, pos))
-
-							elif dp.attrib['type'] == 'nmod:poss':
-								governor = dp.find('governor').text
-								dependent = dp.find('dependent').text
-								dep_id = int(dp.find('dependent').attrib['idx'])
-								gov_id = int(dp.find('governor').attrib['idx'])
-
-								if (dep_id, s_id) in corefs.keys():
-									character = corefs[(dep_id, s_id)]
-									# print(character)
-									if character in reverse_names.keys():
-										
-										# print(governor, s_id, gov_id)
-										pos = postag.get((governor, s_id, gov_id), '0')
-										lemma = lmt.lemmatize(governor)
-										if pos == 'NNP':
-											print(governor)
+											self.get_character(reverse_names[character]).persona['patient'].append((lemma, pos))
+									
+									# ---------------------------------------------
+									# start nmod:poss
+									# ---------------------------------------------
+									elif relation == 'nmod:poss':
 										if pos != '0' and pos != 'NNP':
-											self.get_character(reverse_names[character]).persona['poss'].append((governor, lemma, pos))
+											self.get_character(reverse_names[character]).persona['poss'].append((lemma, pos))
+						
+										# ---------------------------------------------
+										# find the adjective
+										# ---------------------------------------------
+										if (gov_id, governor) in mytree.keys():
+											children2 = mytree.get((gov_id, governor), [])
 
+											for child2 in children2:
+												rel2 = child2[2]
+												dep2 = child2[1]
+												dep_id2 = child2[0]
+
+												postagg = postag[(dep2, s_id, dep_id2)]
+												
+												if rel2 == 'amod':
+													print(orig_name, ':', dep2, governor + ' (' + postagg + ')', rel2)
+													self.get_character(reverse_names[character]).adjectives.append(dep2)
 
 
 # ===========================================================================================
@@ -301,7 +518,6 @@ class Book:
 # ===========================================================================================
 def main():
 	args = sys.argv
-	# print(args)
 
 	if len(args) != 3:
 		print("How to run this file: python Character.py [gold standard file] [XML folder]")
@@ -324,7 +540,7 @@ def main():
 		character_name = data[0]
 		book_title = data[1]
 		book_id = data[2]
-		book_json = data[3]
+		author = data[3]
 		other_names = data[4].split('/')
 
 		gender = data[5]
@@ -366,71 +582,67 @@ def main():
 			book_dictionary[book_title].character_list[character_name] = c
 		else:
 			b = Book(book_title)
-			b.json = book_json
+			b.json = author
 			b.book_file = book_id
 			b.character_list[character_name] = c
 			book_dictionary[book_title] = b
+		# print(line)
 	
-	key = "Jane Eyre"
-	book = book_dictionary[key]
-	folder = xml_folder + '/' + book.book_file[:-5]
-
-	book.create_persona(folder)
-
-	files = os.listdir(folder)
-
-	for character in book.character_list.keys():
-		cc = book.character_list[character]
-
-		for afile in files:
-			f = open(folder + '/' + afile, 'r')
-			lines = f.read()
-
-			for name in cc.possible_names:
-				if name in lines:
-					print(cc.name, afile)
 
 	# going through each book and create personas of the characters
-	# for key in book_dictionary.keys():
-	# for key in ["Jane Eyre"]:
-	# 	book = book_dictionary[key]
-	# 	folder = xml_folder + '/' + book.book_file[:-5]
-	# 	try:
-	# 		book.create_persona(folder)
+	for key in book_dictionary.keys():
+	# for key in ["A Little Princess"]:
+		book = book_dictionary[key]
+		folder = xml_folder + '/' + book.book_file[:-5]
+		
+		try:
+			book.create_persona(folder)
+			book.process_quotes('quotes/'+book.book_file[:-5] + '.txt.quote')
 
-	# 		for character in book.character_list.keys():
-	# 			cObj = book.character_list[character]
-	# 			if cObj.isEmpty():
-	# 				error_file.write(character)
-	# 			else:
-	# 				persona = cObj.persona
+			for character in book.character_list.keys():
+				cObj = book.character_list[character]
+				if cObj.isEmpty():
+					error_file.write(character)
+				else:
+					persona = cObj.persona
 
-	# 				persona['name'] = cObj.name
+					persona['name'] = cObj.name
 
-	# 				persona['extroversion'] = cObj.E
-	# 				persona['agreeableness'] = cObj.A
-	# 				persona['conscientiousness'] = cObj.C
-	# 				persona['stability'] = cObj.S
-	# 				persona['openness'] = cObj.O
+					persona['extroversion'] = cObj.E
+					persona['agreeableness'] = cObj.A
+					persona['conscientiousness'] = cObj.C
+					persona['stability'] = cObj.S
+					persona['openness'] = cObj.O
 
-	# 				persona['z_extroversion'] = cObj.zE
-	# 				persona['z_agreeableness'] = cObj.zA
-	# 				persona['z_conscientiousness'] = cObj.zC
-	# 				persona['z_stability'] = cObj.zS
-	# 				persona['z_openness'] = cObj.zO
+					persona['z_extroversion'] = cObj.zE
+					persona['z_agreeableness'] = cObj.zA
+					persona['z_conscientiousness'] = cObj.zC
+					persona['z_stability'] = cObj.zS
+					persona['z_openness'] = cObj.zO
 
-	# 				persona['gender'] = cObj.gender
-	# 				persona['valence'] = cObj.valence
-	# 				persona['salience'] = cObj.salience
+					persona['gender'] = cObj.gender
+					persona['valence'] = cObj.valence
+					persona['salience'] = cObj.salience
+					persona['quotes'] = cObj.quotes
+					persona['dialogue_tag'] = cObj.dialogue_tag
+					persona['sentences'] = book.char_sent[character]
+					persona['adjectives'] = cObj.adjectives
+					persona['adverbs'] = cObj.adverbs
 
-	# 				outfile = open('character_json/' + character + '.json', 'w')
-	# 				json.dump(persona, outfile)
-	# 				outfile.close()
+					# print(persona)
 
-	# 	except Exception as e:
-	# 		error_file.write('Exception ' + str(e) + ' for file ' + book.title + '\n')
-	# 		continue
+					outfile = open('character_json/' + character + '.json', 'w')
+					json.dump(persona, outfile)
+					outfile.close()
+
+		except Exception as e:
+			error_file.write('Exception ' + str(e) + ' for file ' + book.title + '\n')
+			# print(e)
+			continue
+
+	# for x in sorted(adverb_dict, key=adverb_dict.get, reverse=True):
+	# 	print(x, adverb_dict[x])
 
 	error_file.close()
 
-# main()
+main()
